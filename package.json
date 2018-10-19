@@ -47,9 +47,9 @@
     "styletron-react": "^4.3.5"
   },
   "author": "Serge Droganov <serge@droganov.ru>",
-  "homepage": "https://github.com/droganov/rkta-ui",
+  "homepage": "https://github.com/r-k-t-a/rkta-ui",
   "repository": {
     "type": "git",
-    "url": "git@github.com:droganov/rkta-ui.git"
+    "url": "git@github.com:r-k-t-a/rkta-ui.git"
   }
 }
