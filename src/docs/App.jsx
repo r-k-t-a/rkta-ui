@@ -1,13 +1,13 @@
 import React, { Component, createRef } from 'react';
 
-import Typography from './Typography';
+import Bage from './Bage';
 
 class App extends Component {
   ref = createRef();
   componentDidMount() {
     console.log('Divider', this.ref.current);
   }
-  render = () => <Typography uiRef={this.ref} />;
+  render = () => <Bage />;
 }
 
 export default App;
