@@ -5,4 +5,4 @@ import { withStyle } from '../../Theme';
 
 const Divider = ({ children, ...rest }) => <Atom element="hr" {...rest} />;
 
-export default withStyle(Divider, 'divider');
+export default withStyle(Divider);

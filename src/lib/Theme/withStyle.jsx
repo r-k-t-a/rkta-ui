@@ -24,21 +24,19 @@ const getStyles = (theme, { children, ...props }, element) => {
 const pickProps = (contextTheme, props, element) => {
   const theme = merge(defaultTheme, contextTheme);
   if (element in theme) return getStyles(theme, props, element);
-  return Object.assign({}, props, { theme });
+  return { ...props, theme };
 };
 
 const withStyle = (Element, key) => {
+  const elementName = Element.displayName || Element.name;
   const WithStyle = props => (
     <Context.Consumer>
       {({ theme, toggleTheme }) => (
-        <Element
-          {...pickProps(theme, props, key)}
-          toggleTheme={toggleTheme}
-        />
+        <Element {...pickProps(theme, props, key || elementName)} toggleTheme={toggleTheme} />
       )}
     </Context.Consumer>
   );
-  WithStyle.displayName = `WithStyle: ${Element.displayName || Element.name}`;
+  WithStyle.displayName = `WithStyle: ${elementName}`;
   return WithStyle;
 };
 

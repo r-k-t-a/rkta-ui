@@ -27,4 +27,4 @@ Font.defaultProps = {
   level: 1,
 };
 
-export default withStyle(Header, 'header');
+export default withStyle(Header);
