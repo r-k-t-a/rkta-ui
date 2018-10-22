@@ -27,7 +27,7 @@ export default css({
     padding: 0,
   },
   muted: {
-    opacity: '0.24',
+    opacity: '0.4',
     userSelect: 'none',
   },
   center: {
@@ -36,8 +36,8 @@ export default css({
   etched: {
     textShadow: '0 1px rgba(255, 255, 255, 0.24)',
   },
+  noselect: { userSelect: 'none' },
   nowrap: {
-    display: 'block',
     whiteSpace: 'nowrap',
     textOverflow: 'ellipsis',
     overflow: 'hidden',
@@ -46,9 +46,7 @@ export default css({
     overflowWrap: 'break-word',
     wordWrap: 'break-word',
   },
-  hyphens: {
-    hyphens: 'auto',
-  },
+  hyphens: { hyphens: 'auto' },
 
 
   // size
@@ -121,7 +119,5 @@ export default css({
     lineHeight: '20px',
     fontWeight: '400',
     letterSpacing: '1px',
-    textTransform: 'uppercase',
   },
-
 });
