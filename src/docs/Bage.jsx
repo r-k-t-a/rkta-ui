@@ -30,6 +30,10 @@ const Bages = () => (
     <Bage overline uppercase color6 noselect>
       A Bage
     </Bage>
+
+    <Paper color8 hardTop={true}>
+      paper 8
+    </Paper>
   </Paper>
 );
 
