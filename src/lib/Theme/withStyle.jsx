@@ -4,7 +4,7 @@ import merge from 'lodash.merge';
 import Context from './Context';
 import defaultTheme from './defaultTheme';
 
-const getStyles = (theme, { children, ...props }, element) => {
+const modifyStyles = (theme, { children, ...props }, element) => {
   const { defaultStyle, ...styles } = theme[element];
   const { nextStyle, nextProps } = Object.keys(props).reduce(
     (acc, key) => {
@@ -23,7 +23,7 @@ const getStyles = (theme, { children, ...props }, element) => {
 
 const pickProps = (contextTheme, props, element) => {
   const theme = merge(defaultTheme, contextTheme);
-  if (element in theme) return getStyles(theme, props, element);
+  if (element in theme) return modifyStyles(theme, props, element);
   return { ...props, theme };
 };
 

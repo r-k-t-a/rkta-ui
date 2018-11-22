@@ -7,4 +7,10 @@ export default css({
     padding: '0 calc(.48ex + 4px)',
     verticalAlign: 'middle',
   },
+  fitLeft: {
+    marginLeft: 0,
+  },
+  fitRight: {
+    marginRight: 0,
+  },
 });

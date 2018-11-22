@@ -14,7 +14,10 @@ const Bages = () => (
     <Bage h6>
       A Bage
     </Bage>
-    <Bage h1 secondary color="paper" uppercase noselect>
+    <Bage h1 secondary color="paper" uppercase hardRight fitRight>
+      A Bage
+    </Bage>
+    <Bage h1 uppercase hardLeft fitLeft>
       A Bage
     </Bage>
     <Bage subtitle1 primary1>
