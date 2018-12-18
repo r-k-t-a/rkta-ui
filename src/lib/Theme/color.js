@@ -9,8 +9,13 @@ export const text = '#414141';
 export const divider = 'rgba(0,0,0, .16)';
 
 export const paper = '#FCFCFC';
+export const paper1 = '#FAFAFA';
+export const paper2 = '#EEEEEE';
+export const paper3 = '#E0E0E0';
+
 export const success = '#91CE79';
 export const warning = '#F36F1B';
+
 
 export const extra = {
   1: '#FAD8C2',

@@ -7,9 +7,17 @@ import { withStyle } from '../../Theme';
 const modifyProps = ({ rize, size, style, theme, ...props }) => {
   const nextStyle = {};
   if (rize) {
-    const x = rize;
-    const blur = Math.max(rize ** 3, 4);
-    Object.assign(nextStyle, { boxShadow: `0 ${x}px ${blur}px 0 rgba(0,0,0, .48)` });
+    const blur = Math.max(rize ** 3, 5);
+    Object.assign(
+      nextStyle,
+      {
+        boxShadow: `
+          0px ${rize}px ${blur}px 0px rgba(0, 0, 0, 0.2),
+          0px ${rize * 2}px ${blur / 2}px 0px rgba(0, 0, 0, 0.14),
+          0px ${rize * 3}px ${blur / rize}1px ${-rize / 2}px rgba(0, 0, 0, 0.12)
+        `,
+      },
+    );
   }
   if (size) {
     const cssSize = `${size}px`;

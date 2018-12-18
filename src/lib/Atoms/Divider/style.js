@@ -1,4 +1,4 @@
-import { css } from '../../util';
+import css from '../../util/css';
 import { divider } from '../../Theme/color';
 
 export default css({

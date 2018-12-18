@@ -1,4 +1,4 @@
-import { css } from '../../util';
+import css from '../../util/css';
 
 export default css({
   defaultStyle: {},

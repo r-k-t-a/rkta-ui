@@ -1,24 +1,18 @@
-import { css, mapColors } from '../../util';
+import css from '../../util/css';
+import mapColors from '../../util/mapColors';
 import * as colors from '../../Theme/color';
 
-const { extra, paper, ...primary } = colors;
-
+const { extra, paper, ...named } = colors;
 
 export default css({
-  ...mapColors(primary, (acc, key) => Object.assign(
-    acc,
-    { [key]: { backgroundColor: primary[key] } },
-  )),
-  ...mapColors(extra, (acc, key) => Object.assign(
-    acc,
-    { [`color${key}`]: { backgroundColor: extra[key] } },
-  )),
   defaultStyle: {
     borderRadius: '3px',
     boxSizing: 'border-box',
     backgroundColor: paper,
     position: 'relative',
   },
+  ...mapColors(named, 'backgroundColor'),
+  ...mapColors(extra, 'backgroundColor', 'color'),
   clip: { overflow: 'hidden' },
   disabled: {
     pointerEvents: 'none',

@@ -1,2 +1,3 @@
 export * from './Theme';
-export * from './Atoms';
+export * from './atoms';
+export * from './molecules';

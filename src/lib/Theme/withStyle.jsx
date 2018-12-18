@@ -1,8 +1,7 @@
 import React from 'react';
-import merge from 'lodash.merge';
 
 import Context from './Context';
-import defaultTheme from './defaultTheme';
+import defaultRenderrer from './defaultRenderrer';
 
 const modifyStyles = (theme, { children, ...props }, element) => {
   const { defaultStyle, ...styles } = theme[element];
@@ -21,19 +20,19 @@ const modifyStyles = (theme, { children, ...props }, element) => {
   return { ...nextProps, children, theme, style };
 };
 
-const pickProps = (contextTheme, props, element) => {
-  const theme = merge(defaultTheme, contextTheme);
-  if (element in theme) return modifyStyles(theme, props, element);
-  return { ...props, theme };
+const pickProps = (theme, changeTheme, props, elementName) => {
+  if (elementName in theme) return modifyStyles(theme, props, elementName);
+  return { ...props, theme, changeTheme };
 };
 
 const withStyle = (Element, key) => {
   const elementName = Element.displayName || Element.name;
   const WithStyle = props => (
     <Context.Consumer>
-      {({ theme, toggleTheme }) => (
-        <Element {...pickProps(theme, props, key || elementName)} toggleTheme={toggleTheme} />
-      )}
+      {({ modifyElement, theme, changeTheme }) => {
+        const render = modifyElement || defaultRenderrer;
+        return render(Element, pickProps(theme, changeTheme, props, key || elementName));
+      }}
     </Context.Consumer>
   );
   WithStyle.displayName = `WithStyle: ${elementName}`;

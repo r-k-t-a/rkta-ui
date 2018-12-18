@@ -1,15 +1,15 @@
-import { createElement } from 'react';
+import React from 'react';
 import { styled } from 'styletron-react';
 
 const Atom = ({
-  element,
+  element: Element,
   inlineStyles,
   style,
   theme,
-  toggleTheme,
+  changeTheme,
   uiRef,
   ...rest
-}) => createElement(element, { ...rest, ref: uiRef, style: inlineStyles });
+}) => <Element {...rest} ref={uiRef} style={inlineStyles} />;
 
 Atom.defaultProps = { element: 'div' };
 

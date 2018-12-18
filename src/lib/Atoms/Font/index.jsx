@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import getColor from '../../util/getColor';
 
 import Atom from '../Atom';
 import { withStyle } from '../../Theme';
 
 const getFontProps = (color, { colors }, rest) => {
-  const nextColor = typeof color === 'number' ? colors.extra[color] : colors[color];
+  const nextColor = getColor(colors, color);
   if (!nextColor) return rest;
   const nextStyle = { ...rest.style, color: nextColor };
   return { ...rest, style: nextStyle };

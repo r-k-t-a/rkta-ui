@@ -1,4 +1,4 @@
-import { css } from '../../util';
+import css from '../../util/css';
 import { text } from '../../Theme/color';
 
 export default css({
@@ -10,6 +10,7 @@ export default css({
     letterSpacing: '0.15px',
     lineHeight: '24px',
     textRendering: 'optimizeLegibility',
+    textDecoration: 'none',
   },
   serif: {
     fontFamily: '"Playfair Display", Bookman, Palatino, Georgia, serif',
