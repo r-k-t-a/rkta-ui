@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 
-import { Bage, Spinner, Header, Divider } from '../../lib';
+import { Bage, Spinner, Header, Divider } from '../../../lib';
 
 const PaperView = () => (
   <Fragment>
-    <Header level="1">
+    <Header level={1}>
       Spinner
     </Header>
     <Spinner warning />

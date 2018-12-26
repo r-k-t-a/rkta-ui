@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 
-import { Divider, Header } from '../../lib';
+import { Divider, Header } from '../../../lib';
 
 const Typography = () => (
   <Fragment>
-    <Header level="1">
+    <Header level={1}>
       Header
     </Header>
     <Divider dotted />

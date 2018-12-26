@@ -3,6 +3,7 @@ import { styled } from 'styletron-react';
 
 const Atom = ({
   element: Element,
+  getColor,
   inlineStyles,
   style,
   theme,

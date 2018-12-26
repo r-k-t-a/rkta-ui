@@ -24,13 +24,25 @@ export default class UiProvider extends Component {
       theme: merge(defaultTheme, nextTheme),
     });
   }
+  getColor = (color) => {
+    const { colors } = this.state.theme;
+    const colorValue = typeof color === 'number' ? colors.extra[color] : colors[color];
+    return colorValue || colors.text;
+  }
   render() {
     const { changeTheme } = this;
     const { theme } = this.state;
     const { children, modifyElement, ...rest } = this.props;
     return (
       <Provider {...rest}>
-        <Context.Provider value={{ modifyElement, theme, changeTheme }}>
+        <Context.Provider
+          value={{
+            getColor: this.getColor,
+            changeTheme,
+            modifyElement,
+            theme,
+          }}
+        >
           {children}
         </Context.Provider>
       </Provider>

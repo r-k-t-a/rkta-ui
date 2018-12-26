@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 
-import { Paper, Header, Divider } from '../../lib';
+import { Paper, Header, Divider } from '../../../lib';
 
 const PaperView = () => (
   <Fragment>
-    <Header level="1">
+    <Header level={1}>
       Paper
     </Header>
     <Paper rize={1}>

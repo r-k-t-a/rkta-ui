@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 
-import { Divider, Bage, Header } from '../../lib';
+import { Divider, Bage, Header } from '../../../lib';
 
 const Bages = () => (
   <Fragment>
-    <Header level="1">
+    <Header level={1}>
       Bage
     </Header>
     <Bage muted primary>

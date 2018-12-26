@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Font from '../Font';
-import { withStyle } from '../../Theme';
+import withStyle from '../../Theme/withStyle';
 
 const getFontProps = (level, rest) => {
   if (level >= 1 && level <= 6) {
@@ -18,12 +18,13 @@ const Header = ({ children, level, ...rest }) => (
   </Font>
 );
 
-Font.propTypes = {
-  children: PropTypes.node.isRequired,
+Header.propTypes = {
+  children: PropTypes.node,
   level: PropTypes.number,
 };
 
-Font.defaultProps = {
+Header.defaultProps = {
+  children: null,
   level: 1,
 };
 

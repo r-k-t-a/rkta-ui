@@ -1,9 +1,7 @@
 import css from '../../util/css';
-import { text } from '../../Theme/color';
 
 export default css({
   defaultStyle: {
-    color: text,
     fontFamily: '"San Francisco", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif',
     fontSize: '16px',
     fontWeight: '400',

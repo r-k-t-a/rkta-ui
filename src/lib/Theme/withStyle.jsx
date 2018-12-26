@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import Context from './Context';
 import defaultRenderrer from './defaultRenderrer';
+import invariant from '../util/invariant';
 
-const modifyStyles = (theme, { children, ...props }, element) => {
-  const { defaultStyle, ...styles } = theme[element];
+const modifyStyles = (context, { children, ...props }, element, ref) => {
+  const { defaultStyle, ...styles } = context.theme[element];
   const { nextStyle, nextProps } = Object.keys(props).reduce(
     (acc, key) => {
       if (props[key] === true && key in styles) Object.assign(acc.nextStyle, styles[key]);
@@ -17,24 +18,26 @@ const modifyStyles = (theme, { children, ...props }, element) => {
     },
   );
   const style = { ...nextStyle, ...props.style };
-  return { ...nextProps, children, theme, style };
+  return { ...nextProps, ...context, children, style, ref };
 };
 
-const pickProps = (theme, changeTheme, props, elementName) => {
-  if (elementName in theme) return modifyStyles(theme, props, elementName);
-  return { ...props, theme, changeTheme };
+const pickProps = (context, props, elementName, ref) => {
+  if (elementName in context.theme) return modifyStyles(context, props, elementName, ref);
+  return { ...props, ...context, ref };
 };
 
 const withStyle = (Element, key) => {
   const elementName = Element.displayName || Element.name;
-  const WithStyle = props => (
+  const WithStyle = forwardRef((props, ref) => (
     <Context.Consumer>
-      {({ modifyElement, theme, changeTheme }) => {
+      {({ modifyElement, providerIsMissing, ...context }) => {
+        invariant(!providerIsMissing, 'Please use the Provider');
         const render = modifyElement || defaultRenderrer;
-        return render(Element, pickProps(theme, changeTheme, props, key || elementName));
+        return render(Element, pickProps(context, props, key || elementName, ref));
       }}
     </Context.Consumer>
-  );
+  ));
+  WithStyle.contextType = Context;
   WithStyle.displayName = `WithStyle: ${elementName}`;
   return WithStyle;
 };

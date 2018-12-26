@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Atom from '../../atoms/Atom';
-import { withStyle } from '../../Theme';
-import getColor from '../../util/getColor';
+import withStyle from '../../Theme/withStyle';
 
 const animationName = {
   '0%': {
@@ -36,15 +35,15 @@ const Spinner = ({
   borderWidth,
   children,
   color,
+  getColor,
   style,
   size,
-  theme,
 }) => (
   <Atom style={style}>
     <Atom
       style={{
         ...segmentStyle,
-        borderColor: color && getColor(theme.colors, color),
+        borderColor: getColor(color),
         borderWidth,
         width: size,
         height: size,
@@ -58,9 +57,9 @@ Spinner.propTypes = {
   borderWidth: PropTypes.string,
   children: PropTypes.node,
   color: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  getColor: PropTypes.func.isRequired,
   size: PropTypes.string,
   style: PropTypes.shape().isRequired,
-  theme: PropTypes.shape().isRequired,
 };
 
 Spinner.defaultProps = {

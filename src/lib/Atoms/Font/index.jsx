@@ -1,28 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import getColor from '../../util/getColor';
 
 import Atom from '../Atom';
-import { withStyle } from '../../Theme';
+import withStyle from '../../Theme/withStyle';
 
-const getFontProps = (color, { colors }, rest) => {
-  const nextColor = getColor(colors, color);
-  if (!nextColor) return rest;
-  const nextStyle = { ...rest.style, color: nextColor };
+const getFontProps = (color, getColor, rest) => {
+  const nextStyle = { ...rest.style, color: getColor(color) };
   return { ...rest, style: nextStyle };
 };
 
-const Font = ({ children, color, theme, ...rest }) => (
-  <Atom element="span" {...getFontProps(color, theme, rest)}>
+const Font = ({ children, getColor, color, theme, ...rest }) => (
+  <Atom element="span" {...getFontProps(color, getColor, rest)}>
     {children}
   </Atom>
 );
 
 Font.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   color: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  getColor: PropTypes.func.isRequired,
 };
 Font.defaultProps = {
+  children: null,
   color: '',
 };
 

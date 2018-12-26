@@ -24,6 +24,7 @@ export default css({
   hardLeft: { borderBottomLeftRadius: '0', borderTopLeftRadius: '0' },
   hardTop: { borderTopLeftRadius: '0', borderTopRightRadius: '0' },
   hardRight: { borderBottomRightRadius: '0', borderTopRightRadius: '0' },
-  round: { borderRadius: '1200vw' },
+  round: { borderRadius: '50%' },
+  rounded: { borderRadius: '1200vw' },
   transparent: { backgroundColor: 'transparent' },
 });

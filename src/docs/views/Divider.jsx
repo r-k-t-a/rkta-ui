@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 
-import { Divider, Header, Paper } from '../../lib';
+import { Divider, Header, Paper } from '../../../lib';
 
 const Typography = () => (
   <Fragment>
-    <Header level="1">
+    <Header level={1}>
       Divider
     </Header>
     <Paper paper2 style={{ padding: '20px' }}>

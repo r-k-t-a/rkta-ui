@@ -1,13 +1,12 @@
 import css from '../../util/css';
-import { text } from '../../Theme/color';
 
 export default css({
   defaultStyle: {
     alignItems: 'center',
-    borderColor: text,
     display: 'inline-flex',
     flexDirection: 'column',
     justifyContent: 'center',
+    pointerEvents: 'none',
     position: 'relative',
   },
   blockLevel: {
