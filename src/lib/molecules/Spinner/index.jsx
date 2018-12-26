@@ -53,6 +53,7 @@ const Spinner = ({
   </Atom>
 );
 
+Spinner.displayName = 'Spinner';
 Spinner.propTypes = {
   borderWidth: PropTypes.string,
   children: PropTypes.node,

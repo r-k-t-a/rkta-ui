@@ -27,18 +27,18 @@ const pickProps = (context, props, elementName, ref) => {
 };
 
 const withStyle = (Element, key) => {
-  const elementName = Element.displayName || Element.name;
+  const { displayName } = Element;
   const WithStyle = forwardRef((props, ref) => (
     <Context.Consumer>
       {({ modifyElement, providerIsMissing, ...context }) => {
         invariant(!providerIsMissing, 'Please use the Provider');
         const render = modifyElement || defaultRenderrer;
-        return render(Element, pickProps(context, props, key || elementName, ref));
+        return render(Element, pickProps(context, props, key || displayName, ref));
       }}
     </Context.Consumer>
   ));
   WithStyle.contextType = Context;
-  WithStyle.displayName = `WithStyle: ${elementName}`;
+  WithStyle.displayName = `WithStyle: ${displayName}`;
   return WithStyle;
 };
 

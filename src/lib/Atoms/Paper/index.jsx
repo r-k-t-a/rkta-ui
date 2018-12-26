@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 
 import Font from '../Font';
 import withStyle from '../../Theme/withStyle';
-import invariant from '../../util/invariant';
 
 const modifyProps = ({ rize, size, style, theme, ...props }) => {
   const nextStyle = {};
-  if ('round' in props) invariant(!size, 'Please specify size');
   if (rize) {
     const blur = Math.max(rize ** 3, 5);
     Object.assign(
@@ -30,6 +28,7 @@ const modifyProps = ({ rize, size, style, theme, ...props }) => {
 
 const Paper = props => <Font {...modifyProps(props)} />;
 
+Paper.displayName = 'Paper';
 Paper.propTypes = {
   rize: PropTypes.number,
   size: PropTypes.number,

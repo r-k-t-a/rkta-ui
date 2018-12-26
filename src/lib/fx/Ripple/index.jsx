@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Atom from '../../atoms/Atom';
@@ -6,21 +6,6 @@ import withStyle from '../../Theme/withStyle';
 
 import Wave from './Wave';
 
-const getInnerBounds = ({ target }) => {
-  try {
-    const el = window.getComputedStyle(target, null);
-    return {
-      innerHeight: parseFloat(el.getPropertyValue('height')),
-      innerWidth: parseFloat(el.getPropertyValue('width')),
-    };
-  } catch {
-    const { clientHeight, clientWidth } = target;
-    return {
-      innerHeight: clientHeight,
-      innerWidth: clientWidth,
-    };
-  }
-};
 
 const getBounds = ({ target }) => {
   const { clientHeight, clientWidth } = target;
@@ -145,6 +130,7 @@ class Ripple extends Component {
 }
 
 
+Ripple.displayName = 'Ripple';
 Ripple.propTypes = {
   color: PropTypes.string,
   getColor: PropTypes.func.isRequired,

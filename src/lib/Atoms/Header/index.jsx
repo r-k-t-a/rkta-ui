@@ -18,6 +18,7 @@ const Header = ({ children, level, ...rest }) => (
   </Font>
 );
 
+Header.displayName = 'Header';
 Header.propTypes = {
   children: PropTypes.node,
   level: PropTypes.number,

@@ -15,6 +15,7 @@ const Font = ({ children, getColor, color, theme, ...rest }) => (
   </Atom>
 );
 
+Font.displayName = 'Font';
 Font.propTypes = {
   children: PropTypes.node,
   color: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

@@ -92,7 +92,7 @@ class Button extends Component {
   }
 }
 
-
+Button.displayName = 'Button';
 Button.propTypes = {
   busy: PropTypes.bool,
   children: PropTypes.node,

@@ -8,7 +8,6 @@ import Button from '../molecules/Button/style';
 import Spinner from '../molecules/Spinner/style';
 
 import Ripple from '../fx/Ripple/style';
-import Wave from '../fx/Wave/style';
 
 import * as colors from './color';
 
@@ -24,5 +23,4 @@ export default {
   Spinner,
 
   Ripple,
-  Wave,
 };
