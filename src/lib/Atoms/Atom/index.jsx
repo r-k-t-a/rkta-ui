@@ -14,4 +14,7 @@ const Atom = ({
 
 Atom.defaultProps = { element: 'div' };
 
-export default styled(Atom, ({ style }) => style);
+const Styled = styled(Atom, ({ style }) => style);
+Styled.displayName = 'Atom';
+
+export default Styled;

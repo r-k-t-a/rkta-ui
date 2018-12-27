@@ -38,7 +38,8 @@ const withStyle = (Element, key) => {
     </Context.Consumer>
   ));
   WithStyle.contextType = Context;
-  WithStyle.displayName = `WithStyle: ${displayName}`;
+  WithStyle.displayName = displayName;
+  Element.displayName = `Styled ${displayName}`; // eslint-disable-line no-param-reassign
   return WithStyle;
 };
 
