@@ -7,6 +7,7 @@ import BageView from './views/Bage';
 import DividerView from './views/Divider';
 import FontView from './views/Font';
 import HeaderView from './views/Header';
+import ListView from './views/List';
 import PaperView from './views/Paper';
 
 import SpinnerView from './views/Spinner';
@@ -39,6 +40,9 @@ class App extends Component {
           <MenuButton to="#Header">
             Header
           </MenuButton>
+          <MenuButton to="#List">
+            List
+          </MenuButton>
           <MenuButton to="#Paper">
             Paper
           </MenuButton>
@@ -56,6 +60,7 @@ class App extends Component {
           <HashRoute path="#Divider" component={DividerView} />
           <HashRoute path="#Font" component={FontView} />
           <HashRoute path="#Header" component={HeaderView} />
+          <HashRoute path="#List" component={ListView} />
           <HashRoute path="#Paper" component={PaperView} />
 
           <HashRoute path="#Button" component={ButtonView} />

@@ -1,6 +1,10 @@
 import React, { Fragment } from 'react';
 
 import { Button, Header, Paper, Divider } from '../../../lib';
+import Bell from '../../../lib/entypo/Bell';
+import Ccw from '../../../lib/entypo/Ccw';
+import Copy from '../../../lib/entypo/Copy';
+
 
 const buttonStyle = { margin: '8px' };
 const paperStyle = { padding: '40px' };
@@ -63,14 +67,14 @@ const ButtonView = () => (
         Round
       </Header>
       <Divider />
-      <Button size={32} style={buttonStyle} small outline round uppercase>
-        32
+      <Button size={32} style={buttonStyle} small transparent round uppercase>
+        <Ccw size={20} />
       </Button>
       <Button size={48} style={buttonStyle} primary round>
-        48
+        <Copy />
       </Button>
       <Button size={64} style={buttonStyle} secondary large color="secondary" outline round>
-        64
+        <Bell />
       </Button>
     </Paper>
     <Divider />

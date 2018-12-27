@@ -14,15 +14,9 @@ export default css({
     display: 'block',
     width: '100%',
   },
-  fitAll: {
-    padding: 0,
-  },
-  fitLeft: {
-    paddingLeft: 0,
-  },
-  fitRight: {
-    paddingRight: 0,
-  },
+  fitAll: { padding: 0 },
+  fitLeft: { paddingLeft: 0 },
+  fitRight: { paddingRight: 0 },
   large: {
     height: '56px',
     padding: '0 32px',

@@ -6,7 +6,7 @@ const { extra, paper, ...named } = colors;
 
 export default css({
   defaultStyle: {
-    borderRadius: '3px',
+    borderRadius: '4px',
     boxSizing: 'border-box',
     backgroundColor: paper,
     position: 'relative',
