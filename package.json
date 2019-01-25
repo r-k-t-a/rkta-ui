@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "concurrently \"npm run lib:watch\" \"npm run docs\"",
     "prelib": "npm run test",
+    "prepublish": "npm run test",
     "lib": "babel src/lib -d lib --copy-files",
     "lib:watch": "babel src/lib -w -d lib --copy-files",
     "docs": "webpack-dev-server --mode development",
