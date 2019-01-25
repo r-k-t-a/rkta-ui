@@ -6,7 +6,6 @@ import Paper from '../atoms/Paper/style';
 import Svg from '../atoms/Svg/style';
 
 import Button from '../molecules/Button/style';
-import ButtonBase from '../molecules/ButtonBase/style';
 import List from '../molecules/List/style';
 import ListItem from '../molecules/List/Item/style';
 import ListItemAddon from '../molecules/List/Item/Addon/style';
@@ -23,15 +22,14 @@ export default {
   Divider,
   Font,
   Header,
-  List,
-  ListItem,
-  ListItemAddon,
-  ListItemBody,
   Paper,
   Svg,
 
   Button,
-  ButtonBase,
+  List,
+  ListItem,
+  ListItemAddon,
+  ListItemBody,
   Spinner,
 
   Ripple,

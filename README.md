@@ -9,6 +9,6 @@ The objective is to create minimalistic and efficient material UI library for Re
 
 
 ### Kudos:
-[Styletron](https://github.com/styletron/styletron)
-[Entypo](http://www.entypo.com/)
-[React-entypo](https://github.com/cox-auto-kc/react-entypo)
+- [Styletron](https://github.com/styletron/styletron)
+- [Entypo](http://www.entypo.com/)
+- [React-entypo](https://github.com/cox-auto-kc/react-entypo)

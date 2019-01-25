@@ -1,12 +1,12 @@
 import React from 'react';
 
-import ButtonBase from '../../ButtonBase';
+import Button from '../../Button';
 import { ListItem } from '../Item';
 
 const ListButton = props => (
   <ListItem
     autoHeight
-    BaseElement={ButtonBase}
+    BaseElement={Button}
     blockLevel
     fitAll
     textLeft
