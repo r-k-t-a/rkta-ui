@@ -14,4 +14,6 @@ const ListButton = props => (
   />
 );
 
+ListButton.displayName = 'ListButton';
+
 export default ListButton;
