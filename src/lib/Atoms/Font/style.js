@@ -46,6 +46,9 @@ export default css({
     wordWrap: 'break-word',
   },
   hyphens: { hyphens: 'auto' },
+  textLeft: {
+    textAlign: 'left',
+  },
 
 
   // size

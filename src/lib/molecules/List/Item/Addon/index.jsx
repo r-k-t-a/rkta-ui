@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Paper from '../../../Paper';
+import Atom from '../../../../atoms/Atom';
 import withStyle from '../../../../Theme/withStyle';
 
 const ListItemAddon = ({ children, ...props }) => (
-  <Paper hard transparent {...props}>
+  <Atom element="span" {...props}>
     {children}
-  </Paper>
+  </Atom>
 );
 
 ListItemAddon.displayName = 'ListItemAddon';

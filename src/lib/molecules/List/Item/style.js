@@ -8,8 +8,5 @@ export default css({
     listStyleType: 'none',
     margin: 0,
     padding: 0,
-    ':hover': {
-      backgroundColor: '#cfe',
-    },
   },
 });

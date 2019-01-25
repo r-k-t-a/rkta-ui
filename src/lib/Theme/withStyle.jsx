@@ -8,8 +8,9 @@ const modifyStyles = (context, { children, ...props }, element, ref) => {
   const { defaultStyle, ...styles } = context.theme[element];
   const { nextStyle, nextProps } = Object.keys(props).reduce(
     (acc, key) => {
-      if (props[key] === true && key in styles) Object.assign(acc.nextStyle, styles[key]);
-      else Object.assign(acc.nextProps, { [key]: props[key] });
+      const value = props[key];
+      if (value === true && key in styles) Object.assign(acc.nextStyle, styles[key]);
+      else if (!(key in styles)) Object.assign(acc.nextProps, { [key]: value });
       return acc;
     },
     {

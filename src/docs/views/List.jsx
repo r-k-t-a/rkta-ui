@@ -7,6 +7,7 @@ import {
   List,
   ListItemAddon,
   ListItemBody,
+  ListButton,
   ListItem,
   Paper,
 } from '../../../lib';
@@ -28,6 +29,9 @@ const Typography = () => (
       <Header h6>
         Normal
       </Header>
+      <ListItem small>
+        Test
+      </ListItem>
       <Divider />
       <List rize={1} style={listStyle}>
         <ListItem>
@@ -43,16 +47,23 @@ const Typography = () => (
           <ListItemAddon>
             <Archive />
           </ListItemAddon>
-          <ListItemBody>
-            Item 2
-            <Font caption element="div">
-              Description
-            </Font>
-          </ListItemBody>
+          <ListItemBody
+            text="text"
+            caption="caption"
+          />
           <ListItemAddon>
-            <Cake />
+            <Cake size={16} color={13} />
           </ListItemAddon>
         </ListItem>
+        <ListButton>
+          <ListItemAddon>
+            <Wallet />
+          </ListItemAddon>
+          <ListItemBody
+            text="text"
+            caption="caption"
+          />
+        </ListButton>
       </List>
     </Paper>
   </Fragment>

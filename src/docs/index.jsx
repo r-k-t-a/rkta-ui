@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 import { Provider } from '../../lib/Theme';
 import App from './App';
-import { Button, Paper } from '../../lib';
+// import Tmp from './tmp';
 
 const engine = new Styletron();
 const customTheme = {
@@ -15,7 +15,6 @@ const customTheme = {
 const modifyElement = (Component, { activeProps, href, to, ...rest }) => {
   if (href) return <Component {...rest} element="a" href={href} />;
   if (to) {
-    // normally you use router.matchPath here
     const conditionalProps = to === window.location.hash ? activeProps : {};
     return <Component {...rest} {...conditionalProps} element={NavLink} to={to} />;
   }
@@ -30,12 +29,8 @@ render(
       theme={customTheme}
       value={engine}
     >
+      {/* <Tmp /> */}
       <App />
-      {/* <Paper color5 style={{ padding: '8px' }}>
-        <Button>
-          Button
-        </Button>
-      </Paper> */}
     </Provider>
   ),
   document.getElementById('app'),
