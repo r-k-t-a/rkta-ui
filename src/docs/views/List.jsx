@@ -5,7 +5,7 @@ import {
   Header,
   Font,
   List,
-  ListItemAddon,
+  Addon,
   ListItemBody,
   ListButton,
   ListItem,
@@ -35,30 +35,30 @@ const Typography = () => (
       <Divider />
       <List rize={1} style={listStyle}>
         <ListItem>
-          <ListItemAddon>
+          <Addon>
             <Wallet />
-          </ListItemAddon>
+          </Addon>
           <ListItemBody>
             Item 1
           </ListItemBody>
         </ListItem>
         <Divider inset dotted />
         <ListItem>
-          <ListItemAddon>
+          <Addon>
             <Archive />
-          </ListItemAddon>
+          </Addon>
           <ListItemBody
             text="text"
             caption="caption"
           />
-          <ListItemAddon>
+          <Addon>
             <Cake size={16} color={13} />
-          </ListItemAddon>
+          </Addon>
         </ListItem>
         <ListButton>
-          <ListItemAddon>
+          <Addon>
             <Wallet />
-          </ListItemAddon>
+          </Addon>
           <ListItemBody
             text="text"
             caption="caption"

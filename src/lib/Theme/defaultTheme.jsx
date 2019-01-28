@@ -1,3 +1,4 @@
+import Addon from '../atoms/Addon/style';
 import Bage from '../atoms/Bage/style';
 import Divider from '../atoms/Divider/style';
 import Font from '../atoms/Font/style';
@@ -6,9 +7,10 @@ import Paper from '../atoms/Paper/style';
 import Svg from '../atoms/Svg/style';
 
 import Button from '../molecules/Button/style';
+import Input from '../molecules/Input/style';
+import InputBase from '../molecules/Input/Base/style';
 import List from '../molecules/List/style';
 import ListItem from '../molecules/List/Item/style';
-import ListItemAddon from '../molecules/List/Item/Addon/style';
 import ListItemBody from '../molecules/List/Item/Body/style';
 import Spinner from '../molecules/Spinner/style';
 
@@ -18,6 +20,7 @@ import * as colors from './color';
 
 export default {
   colors,
+  Addon,
   Bage,
   Divider,
   Font,
@@ -26,9 +29,10 @@ export default {
   Svg,
 
   Button,
+  Input,
+  InputBase,
   List,
   ListItem,
-  ListItemAddon,
   ListItemBody,
   Spinner,
 

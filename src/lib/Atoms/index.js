@@ -1,3 +1,4 @@
+export Addon from './Addon';
 export Atom from './Atom';
 export Bage from './Bage';
 export Divider from './Divider';

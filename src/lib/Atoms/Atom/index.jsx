@@ -5,6 +5,7 @@ const Atom = ({
   element: Element,
   getColor,
   inlineStyles,
+  pathname,
   style,
   theme,
   changeTheme,

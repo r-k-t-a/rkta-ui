@@ -10,6 +10,7 @@ const ListItem = ({
   BaseElement,
   center,
   children,
+  element,
   reverse,
   role,
   small,
@@ -18,10 +19,12 @@ const ListItem = ({
 }) => (
   <BaseElement
     hard
+    element={element}
     role={role}
     style={style}
     {...props}
   >
+    {/* {children} */}
     {Children.count(children) === 1
       ? (
         <Body

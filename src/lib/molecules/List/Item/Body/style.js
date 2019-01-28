@@ -10,6 +10,15 @@ export default css({
   center: {
     alignItems: 'center',
   },
+  fitAll: {
+    padding: 0,
+  },
+  fitBottom: {
+    paddingBottom: 0,
+  },
+  fitTop: {
+    paddingTop: 0,
+  },
   reverse: {
     flexDirection: 'column-reverse',
   },
