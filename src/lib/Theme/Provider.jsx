@@ -9,12 +9,12 @@ import defaultTheme from './defaultTheme';
 export default class UiProvider extends Component {
   static propTypes = {
     changeTheme: PropTypes.func,
-    pathname: PropTypes.string,
+    location: PropTypes.string,
     theme: PropTypes.shape(),
   }
   static defaultProps = {
     changeTheme() {},
-    pathname: null,
+    location: null,
     theme: {},
   }
   state = {
@@ -34,13 +34,13 @@ export default class UiProvider extends Component {
   render() {
     const { changeTheme } = this;
     const { theme } = this.state;
-    const { children, pathname, modifyElement, ...rest } = this.props;
+    const { children, location, modifyElement, ...rest } = this.props;
     return (
       <Provider {...rest}>
         <Context.Provider
           value={{
             getColor: this.getColor,
-            pathname: window ? window.location.pathname : pathname,
+            location: window ? window.location.href : location,
             changeTheme,
             modifyElement,
             theme,
