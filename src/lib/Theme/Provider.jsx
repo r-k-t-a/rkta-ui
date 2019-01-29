@@ -40,7 +40,7 @@ export default class UiProvider extends Component {
         <Context.Provider
           value={{
             getColor: this.getColor,
-            location: window ? window.location.href : location,
+            location: typeof window === 'undefined' ? location : window.location.href,
             changeTheme,
             modifyElement,
             theme,
