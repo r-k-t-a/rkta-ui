@@ -5,6 +5,12 @@ import merge from 'lodash.merge';
 
 import Context from './Context';
 import defaultTheme from './defaultTheme';
+import isServer from '../util/isServer';
+
+function getLocation() {
+  const { origin, href } = window.location;
+  return href.replace(origin, '');
+}
 
 export default class UiProvider extends Component {
   static propTypes = {
@@ -40,7 +46,7 @@ export default class UiProvider extends Component {
         <Context.Provider
           value={{
             getColor: this.getColor,
-            location: typeof window === 'undefined' ? location : window.location.href,
+            location: isServer ? location : getLocation(),
             changeTheme,
             modifyElement,
             theme,
