@@ -9,7 +9,7 @@ import App from './App';
 
 const engine = new Styletron();
 const customTheme = {
-  customTheme: 'customTheme',
+  colors: {},
 };
 
 const modifyElement = (Component, { activeProps, href, to, ...rest }) => {

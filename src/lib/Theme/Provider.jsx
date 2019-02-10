@@ -6,10 +6,23 @@ import merge from 'lodash.merge';
 import Context from './Context';
 import defaultTheme from './defaultTheme';
 import isServer from '../util/isServer';
+import mapColors from '../util/mapColors';
 
 function getLocation() {
   const { origin, href } = window.location;
   return href.replace(origin, '');
+}
+
+function modifyTheme(nextTheme) {
+  const mergedTheme = merge(defaultTheme, nextTheme);
+  const { extra, ...named } = mergedTheme.colors;
+  return Object.assign(mergedTheme, {
+    Paper: {
+      ...mergedTheme.Paper,
+      ...mapColors(named, 'backgroundColor'),
+      ...mapColors(extra, 'backgroundColor', 'color'),
+    },
+  });
 }
 
 export default class UiProvider extends Component {
@@ -24,12 +37,12 @@ export default class UiProvider extends Component {
     theme: {},
   }
   state = {
-    theme: merge(defaultTheme, this.props.theme),
+    theme: modifyTheme(this.props.theme),
   }
   changeTheme = (...args) => {
     const nextTheme = this.props.changeTheme(...args);
     this.setState({
-      theme: merge(defaultTheme, nextTheme),
+      theme: modifyTheme(nextTheme),
     });
   }
   getColor = (color) => {

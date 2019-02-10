@@ -1,8 +1,7 @@
 import css from '../../util/css';
-import mapColors from '../../util/mapColors';
 import * as colors from '../../Theme/color';
 
-const { extra, paper, ...named } = colors;
+const { paper } = colors;
 
 export default css({
   defaultStyle: {
@@ -11,8 +10,6 @@ export default css({
     backgroundColor: paper,
     position: 'relative',
   },
-  ...mapColors(named, 'backgroundColor'),
-  ...mapColors(extra, 'backgroundColor', 'color'),
   clip: { overflow: 'hidden' },
   disabled: {
     pointerEvents: 'none',
