@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Paper from '../../atoms/Paper';
 
-const defaultStyle = {
+const defaultCss = {
   animationName: {
     from: { transform: 'scale(0, 0)' },
     to: { transform: 'scale(1, 1)' },
@@ -18,15 +18,15 @@ const defaultStyle = {
   transition: 'opacity 0.4s ease',
 };
 
-const getStyle = (released, style) => {
-  if (released) return { ...defaultStyle, ...style, opacity: 0 };
-  return { ...defaultStyle, ...style };
+const getStyle = (released, css) => {
+  if (released) return { ...defaultCss, ...css, opacity: 0 };
+  return { ...defaultCss, ...css };
 };
 
-const Wave = ({ onDissolve, released, size, style }) => (
+const Wave = ({ css, onDissolve, released, size }) => (
   <Paper
     element="span"
-    style={getStyle(released, style)}
+    css={getStyle(released, css)}
     primary
     size={size}
     onTransitionEnd={onDissolve}
@@ -38,7 +38,7 @@ Wave.propTypes = {
   onDissolve: PropTypes.func,
   released: PropTypes.bool,
   size: PropTypes.number.isRequired,
-  style: PropTypes.shape().isRequired,
+  css: PropTypes.shape().isRequired,
 };
 Wave.defaultProps = {
   onDissolve: undefined,

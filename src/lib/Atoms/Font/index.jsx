@@ -5,8 +5,8 @@ import Atom from '../Atom';
 import withStyle from '../../Theme/withStyle';
 
 const getFontProps = (color, getColor, rest) => {
-  const nextStyle = { ...rest.style, color: getColor(color) };
-  return { ...rest, style: nextStyle };
+  const nextCss = { ...rest.css, color: getColor(color) };
+  return { ...rest, css: nextCss };
 };
 
 const Font = ({ children, getColor, color, theme, ...rest }) => (

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Atom from '../Atom';
 import withStyle from '../../Theme/withStyle';
 
-const Svg = ({ children, color, getColor, size, style, ...rest }) => (
+const Svg = ({ children, color, css, getColor, size, ...rest }) => (
   <Atom
     {...rest}
     element="svg"
@@ -12,7 +12,7 @@ const Svg = ({ children, color, getColor, size, style, ...rest }) => (
       fill: color ? getColor(color) : 'currentColor',
       height: `${size}px`,
       width: `${size}px`,
-      ...style,
+      ...css,
     }}
     viewBox="0 0 20 20"
   >

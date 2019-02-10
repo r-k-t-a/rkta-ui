@@ -10,7 +10,7 @@ import Spinner from '../Spinner';
 import withStyle from '../../Theme/withStyle';
 
 const makeWrapChild = busy => (child) => {
-  const style = busy
+  const css = busy
     ? { visibility: 'hidden' }
     : {
       pointerEvents: 'none',
@@ -18,8 +18,8 @@ const makeWrapChild = busy => (child) => {
       zIndex: 1,
     };
   return isValidElement(child)
-    ? cloneElement(child, { style: { ...child.style, ...style } })
-    : <Atom element="span" style={style}>{child}</Atom>;
+    ? cloneElement(child, { css: { ...child.css, ...css } })
+    : <Atom element="span" css={css}>{child}</Atom>;
 };
 
 class Button extends Component {
@@ -33,10 +33,10 @@ class Button extends Component {
     const { busy, children } = this.props;
     return Children.map(children, makeWrapChild(busy));
   }
-  get style() {
-    const { color, style, getColor, round } = this.props;
+  get css() {
+    const { color, css, getColor, round } = this.props;
     let result = {
-      ...style,
+      ...css,
       borderColor: getColor(color),
     };
     if (round) {
@@ -63,7 +63,7 @@ class Button extends Component {
 
   render() {
     const {
-      busy, children, element, noRipple, spinnerProps, style, ...rest
+      busy, children, css, element, noRipple, spinnerProps, ...rest
     } = this.props;
 
     const { hasFocus, hasHighlight } = this.state;
@@ -74,7 +74,7 @@ class Button extends Component {
         tabIndex={0}
         uiRef={this.contentRef}
         {...rest}
-        style={this.style}
+        css={this.css}
         onBlur={this.handleBlur}
         onFocus={this.handleFocus}
         onMouseEnter={this.handleMouseEnter}
@@ -106,7 +106,7 @@ Button.propTypes = {
   onPointerDown: PropTypes.func,
   onPointerUp: PropTypes.func,
   spinnerProps: PropTypes.shape(),
-  style: PropTypes.shape().isRequired,
+  css: PropTypes.shape().isRequired,
 };
 
 Button.defaultProps = {

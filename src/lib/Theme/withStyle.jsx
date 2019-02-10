@@ -18,8 +18,8 @@ const modifyStyles = (context, { children, ...props }, element, ref) => {
       nextStyle: { ...defaultStyle },
     },
   );
-  const style = { ...nextStyle, ...props.style };
-  return { ...nextProps, ...context, children, style, ref };
+  const css = { ...nextStyle, ...props.css };
+  return { ...nextProps, ...context, children, css, ref };
 };
 
 const pickProps = (context, props, elementName, ref) => {

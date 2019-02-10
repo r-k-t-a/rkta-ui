@@ -3,7 +3,6 @@ import React, { Fragment } from 'react';
 import {
   Divider,
   Header,
-  Font,
   List,
   Addon,
   ListItemBody,
@@ -25,7 +24,7 @@ const Typography = () => (
     <Header level={1}>
       List
     </Header>
-    <Paper paper2 style={paperStyle}>
+    <Paper paper2 css={paperStyle}>
       <Header h6>
         Normal
       </Header>
@@ -33,7 +32,7 @@ const Typography = () => (
         Test
       </ListItem>
       <Divider />
-      <List rize={1} style={listStyle}>
+      <List rize={1} css={listStyle}>
         <ListItem>
           <Addon>
             <Wallet />

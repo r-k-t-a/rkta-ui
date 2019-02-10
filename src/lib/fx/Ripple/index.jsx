@@ -51,14 +51,14 @@ class Ripple extends Component {
     const halfSize = size / 2;
     this.pushWawe({
       created: performance.now(),
-      released: false,
-      size,
-      style: {
+      css: {
         backgroundColor: this.backgroundColor,
         left: `${event.clientX - left - halfSize}px`,
         top: `${event.clientY - top - halfSize}px`,
         zIndex: 2,
       },
+      released: false,
+      size,
     });
   };
   release = () => {
@@ -80,14 +80,14 @@ class Ripple extends Component {
       if (waves.length) return null;
       return {
         outline: {
-          size,
-          style: {
+          css: {
             backgroundColor: this.backgroundColor,
             left: `${width / 2 - halfSize}px`,
             top: `${height / 2 - halfSize}px`,
             transform: `translate(-${size}px, -${size}px)`,
             zIndex: 2,
           },
+          size,
         },
       };
     });
@@ -102,7 +102,7 @@ class Ripple extends Component {
     return (
       <Atom
         element="span"
-        style={{
+        css={{
           background: 'none',
           borderRadius: 'inherit',
           display: 'block',
@@ -117,9 +117,9 @@ class Ripple extends Component {
       >
         <Atom
           element="span"
-          style={{
+          css={{
             backgroundColor: this.backgroundColor,
-            ...this.props.style,
+            ...this.props.css,
           }}
         />
         {this.waves}
@@ -134,7 +134,7 @@ Ripple.displayName = 'Ripple';
 Ripple.propTypes = {
   color: PropTypes.string,
   getColor: PropTypes.func.isRequired,
-  style: PropTypes.shape().isRequired,
+  css: PropTypes.shape().isRequired,
 };
 Ripple.defaultProps = {
   color: null,

@@ -8,7 +8,7 @@ const Typography = () => (
       Font
     </Header>
     <Paper primary>
-      <Header level={1} color="secondary" style={{ textDecoration: 'underline' }}>
+      <Header level={1} color="secondary" css={{ textDecoration: 'underline' }}>
         H1: Handgloves
       </Header>
       <Paper h2 hard>

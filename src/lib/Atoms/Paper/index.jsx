@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import Font from '../Font';
 import withStyle from '../../Theme/withStyle';
 
-const modifyProps = ({ rize, size, style, theme, ...props }) => {
-  const nextStyle = {};
+const modifyProps = ({ css, rize, size, theme, ...props }) => {
+  const nextCss = {};
   if (rize) {
     const blur = Math.max(rize ** 3, 5);
     Object.assign(
-      nextStyle,
+      nextCss,
       {
         boxShadow: `
           0px ${rize}px ${blur}px 0px rgba(0, 0, 0, 0.2),
@@ -21,9 +21,9 @@ const modifyProps = ({ rize, size, style, theme, ...props }) => {
   }
   if (size) {
     const cssSize = `${size}px`;
-    Object.assign(nextStyle, { width: cssSize, height: cssSize });
+    Object.assign(nextCss, { width: cssSize, height: cssSize });
   }
-  return { element: 'div', ...props, style: { ...nextStyle, ...style } };
+  return { element: 'div', ...props, css: { ...nextCss, ...css } };
 };
 
 const Paper = props => <Font {...modifyProps(props)} />;

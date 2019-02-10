@@ -18,37 +18,33 @@ const animationName = {
   },
 };
 
-const segmentStyle = {
+const getSegmentStyle = (borderWidth, size, color) => ({
   animationName,
+  borderWidth,
   animationDuration: '1.6s',
   animationIterationCount: 'infinite',
   animationTimingFunction: 'cubic-bezier(0.5, 0, 0.5, 1)',
-  borderColor: 'inherit',
+  borderBottomColor: color,
+  borderTopColor: color,
   borderLeftColor: 'transparent',
   borderRightColor: 'transparent',
   borderStyle: 'solid',
   borderRadius: '50%',
   boxSizing: 'border-box',
-};
+  width: size,
+  height: size,
+});
 
 const Spinner = ({
   borderWidth,
   children,
   color,
+  css,
   getColor,
-  style,
   size,
 }) => (
-  <Atom style={style}>
-    <Atom
-      style={{
-        ...segmentStyle,
-        borderColor: getColor(color),
-        borderWidth,
-        width: size,
-        height: size,
-      }}
-    />
+  <Atom css={css}>
+    <Atom css={getSegmentStyle(borderWidth, size, getColor(color))} />
     {children}
   </Atom>
 );
@@ -58,9 +54,9 @@ Spinner.propTypes = {
   borderWidth: PropTypes.string,
   children: PropTypes.node,
   color: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  css: PropTypes.shape().isRequired,
   getColor: PropTypes.func.isRequired,
   size: PropTypes.string,
-  style: PropTypes.shape().isRequired,
 };
 
 Spinner.defaultProps = {

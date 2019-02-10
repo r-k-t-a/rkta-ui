@@ -3,8 +3,6 @@ import React, { Fragment } from 'react';
 import {
   Divider,
   Header,
-  Font,
-  List,
   Addon,
   Input,
   Paper,
@@ -14,7 +12,6 @@ import Archive from '../../../lib/entypo/Archive';
 import Cake from '../../../lib/entypo/Cake';
 import Wallet from '../../../lib/entypo/Wallet';
 
-const listStyle = { margin: 'auto', maxWidth: '320px' };
 const paperStyle = { padding: '40px' };
 
 

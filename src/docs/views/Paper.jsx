@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import { Paper, Header, Divider } from '../../../lib';
+import { Paper, Header } from '../../../lib';
 
 const PaperView = () => (
   <Fragment>
