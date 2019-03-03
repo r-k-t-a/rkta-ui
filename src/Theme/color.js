@@ -16,7 +16,6 @@ export const paper3 = '#E0E0E0';
 export const success = '#91CE79';
 export const warning = '#F36F1B';
 
-
 export const extra = {
   1: '#FAD8C2',
   2: '#FFE7CE',

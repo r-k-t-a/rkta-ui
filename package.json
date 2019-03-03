@@ -3,6 +3,11 @@
   "version": "0.0.17",
   "description": "A minimal material UI for React",
   "main": "src/index.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "scripts": {
     "docz:dev": "docz dev",
     "docz:build": "docz build",
@@ -10,7 +15,7 @@
     "lib": "babel src -d lib --copy-files",
     "lib:watch": "babel src -w -d lib --copy-files",
     "lint": "eslint src --ext .js,.jsx",
-    "prettify": "prettier --write src/**.js*",
+    "prettify": "prettier --write src/**/*.js*",
     "shrinkwrap": "npm shrinkwrap",
     "test": "jest --coverage",
     "test:watch": "jest --watch"
