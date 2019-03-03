@@ -1,0 +1,31 @@
+---
+name: Addon
+menu: Atoms
+---
+
+import { Playground, PropsTable } from 'docz'
+import Addon, { RawAdon } from './'
+import { List, ListItem, ListItemBody } from '../../'
+import ArrowRight from '../../entypo/ArrowRight'
+import Cog from '../../entypo/Cog'
+
+# RawAdon
+Addons are meant to be used along with ListItems, to append or prepend to main content
+
+## Props
+<PropsTable of={RawAdon} />
+
+## Examples
+<Playground>
+  <List color10>
+    <ListItem transparent>
+      <Addon>
+        <ArrowRight />
+      </Addon>
+      <ListItemBody>List Item Body</ListItemBody>
+      <Addon>
+        <Cog />
+      </Addon>
+    </ListItem>
+  </List>
+</Playground>

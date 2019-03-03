@@ -1,4 +1,6 @@
-docs
-src
+.docz
 .babelrc
+
+docz
+src
 webpack.config.js
