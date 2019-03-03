@@ -1,6 +1,5 @@
 import css from '../../util/css';
 
-
 export default css({
   defaultStyle: {
     margin: 0,

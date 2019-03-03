@@ -35,15 +35,15 @@ const Input = ({
         hasFocus={hasFocus}
         label={label}
         labelIsActive={labelIsActive}
-        onChange={(event) => {
+        onChange={event => {
           setLocalValue(event.target.value);
           onChange(event);
         }}
-        onBlur={(event) => {
+        onBlur={event => {
           setHasFocus(false);
           onBlur(event);
         }}
-        onFocus={(event) => {
+        onFocus={event => {
           setHasFocus(true);
           onFocus(event);
         }}
@@ -55,7 +55,6 @@ const Input = ({
     </Container>
   );
 };
-
 
 Input.displayName = 'Input';
 Input.propTypes = {

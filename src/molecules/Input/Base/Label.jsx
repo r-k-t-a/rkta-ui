@@ -7,12 +7,7 @@ class Label extends Component {
   ref = node => this.props.setLabelWidth(node.offsetWidth);
 
   render() {
-    const {
-      active,
-      color,
-      height,
-      outlined,
-    } = this.props;
+    const { active, color, height, outlined } = this.props;
     return (
       <Font
         caption={active}
@@ -34,8 +29,8 @@ class Label extends Component {
         Label
       </Font>
     );
-  };
-};
+  }
+}
 
 Label.propTypes = {
   active: PropTypes.bool.isRequired,

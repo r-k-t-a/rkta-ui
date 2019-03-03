@@ -6,7 +6,6 @@ import withStyle from '../../Theme/withStyle';
 
 import Wave from './Wave';
 
-
 const getBounds = ({ target }) => {
   const { clientHeight, clientWidth } = target;
   const { top, left } = target.getBoundingClientRect();
@@ -22,16 +21,19 @@ class Ripple extends Component {
   state = {
     outline: null,
     waves: [],
-  }
+  };
+
   get backgroundColor() {
     const { color, getColor } = this.props;
     return getColor(color);
   }
+
   get outline() {
     const { outline, waves } = this.state;
     if (!outline || waves.length) return null;
     return <Wave {...outline} />;
   }
+
   get waves() {
     return this.state.waves.map(({ created, released, ...wave }) => (
       <Wave
@@ -42,12 +44,15 @@ class Ripple extends Component {
       />
     ));
   }
-  makeTransitionHandler = created => () => this.setState(({ waves }) => ({
-    waves: waves.filter(wave => wave.created !== created),
-  }))
-  pushEvent = (event) => {
+
+  makeTransitionHandler = created => () =>
+    this.setState(({ waves }) => ({
+      waves: waves.filter(wave => wave.created !== created),
+    }));
+
+  pushEvent = event => {
     const { left, top, width, height } = getBounds(event);
-    const size = (((width ** 2) + (height ** 2)) ** 0.5) * 2;
+    const size = (width ** 2 + height ** 2) ** 0.5 * 2;
     const halfSize = size / 2;
     this.pushWawe({
       created: performance.now(),
@@ -61,6 +66,7 @@ class Ripple extends Component {
       size,
     });
   };
+
   release = () => {
     this.setState(({ waves }) => ({
       waves: waves.map(wave => ({
@@ -68,8 +74,10 @@ class Ripple extends Component {
         released: true,
       })),
     }));
-  }
-  removeFocus = () => this.setState({ outline: null })
+  };
+
+  removeFocus = () => this.setState({ outline: null });
+
   setFocus = (event, { current }) => {
     const { width: innerWidth, height: innerHeight } = current.getBoundingClientRect();
     const { width, height } = getBounds(event);
@@ -91,13 +99,14 @@ class Ripple extends Component {
         },
       };
     });
-  }
+  };
 
   pushWawe(wawe) {
     this.setState(({ waves }) => ({
       waves: waves.concat(wawe),
     }));
   }
+
   render() {
     return (
       <Atom
@@ -128,7 +137,6 @@ class Ripple extends Component {
     );
   }
 }
-
 
 Ripple.displayName = 'Ripple';
 Ripple.propTypes = {

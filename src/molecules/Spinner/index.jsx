@@ -35,14 +35,7 @@ const getSegmentStyle = (borderWidth, size, color) => ({
   height: size,
 });
 
-const Spinner = ({
-  borderWidth,
-  children,
-  color,
-  css,
-  getColor,
-  size,
-}) => (
+const Spinner = ({ borderWidth, children, color, css, getColor, size }) => (
   <Atom css={css}>
     <Atom css={getSegmentStyle(borderWidth, size, getColor(color))} />
     {children}

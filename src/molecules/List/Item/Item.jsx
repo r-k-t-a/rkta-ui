@@ -17,27 +17,14 @@ const ListItem = ({
   style,
   ...props
 }) => (
-  <BaseElement
-    hard
-    element={element}
-    role={role}
-    style={style}
-    {...props}
-  >
-    {/* {children} */}
-    {Children.count(children) === 1
-      ? (
-        <Body
-          center={center}
-          reverse={reverse}
-          small={small}
-          {...props}
-        >
-          {children}
-        </Body>
-      )
-      : children
-    }
+  <BaseElement hard element={element} role={role} style={style} {...props}>
+    {Children.count(children) === 1 ? (
+      <Body center={center} reverse={reverse} small={small} {...props}>
+        {children}
+      </Body>
+    ) : (
+      children
+    )}
   </BaseElement>
 );
 

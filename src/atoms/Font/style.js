@@ -14,7 +14,8 @@ export default css({
     fontFamily: '"Playfair Display", Bookman, Palatino, Georgia, serif',
   },
   monospace: {
-    fontFamily: '"Lucida Sans Typewriter", "Lucida Console", "Consolas", "Andale Mono", "Monaco", "Courier New", Courier, monospace',
+    fontFamily:
+      '"Lucida Sans Typewriter", "Lucida Console", "Consolas", "Andale Mono", "Monaco", "Courier New", Courier, monospace',
   },
 
   uppercase: {
@@ -49,7 +50,6 @@ export default css({
   textLeft: {
     textAlign: 'left',
   },
-
 
   // size
   h1: {

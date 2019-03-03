@@ -9,30 +9,37 @@ import Spinner from '../Spinner';
 
 import withStyle from '../../Theme/withStyle';
 
-const makeWrapChild = busy => (child) => {
+const makeWrapChild = busy => child => {
   const css = busy
     ? { visibility: 'hidden' }
     : {
-      pointerEvents: 'none',
-      position: 'relative',
-      zIndex: 1,
-    };
-  return isValidElement(child)
-    ? cloneElement(child, { css: { ...child.css, ...css } })
-    : <Atom element="span" css={css}>{child}</Atom>;
+        pointerEvents: 'none',
+        position: 'relative',
+        zIndex: 1,
+      };
+  return isValidElement(child) ? (
+    cloneElement(child, { css: { ...child.css, ...css } })
+  ) : (
+    <Atom element="span" css={css}>
+      {child}
+    </Atom>
+  );
 };
 
 class Button extends Component {
   state = {
     hasHighlight: false,
-  }
+  };
+
   contentRef = createRef();
+
   rippleRef = createRef();
 
   get content() {
     const { busy, children } = this.props;
     return Children.map(children, makeWrapChild(busy));
   }
+
   get css() {
     const { color, css, getColor, round } = this.props;
     let result = {
@@ -47,24 +54,25 @@ class Button extends Component {
   }
 
   handleBlur = () => this.rippleRef.current.removeFocus();
+
   handleFocus = event => this.rippleRef.current.setFocus(event, this.contentRef);
 
   handleMouseEnter = () => this.setState({ hasHighlight: true });
+
   handleMouseLeave = () => this.setState({ hasHighlight: false });
 
-  handleDown = (event) => {
+  handleDown = event => {
     this.rippleRef.current.pushEvent(event);
     this.props.onPointerDown(event);
-  }
-  handleUp = (event) => {
+  };
+
+  handleUp = event => {
     this.rippleRef.current.release(event);
     this.props.onPointerUp(event);
-  }
+  };
 
   render() {
-    const {
-      busy, children, css, element, noRipple, spinnerProps, ...rest
-    } = this.props;
+    const { busy, children, css, element, noRipple, spinnerProps, ...rest } = this.props;
 
     const { hasFocus, hasHighlight } = this.state;
     return (
@@ -83,12 +91,7 @@ class Button extends Component {
         onPointerUp={this.handleUp}
       >
         {!noRipple && (
-          <Ripple
-            {...rest}
-            highlight={hasHighlight}
-            focus={hasFocus}
-            ref={this.rippleRef}
-          />
+          <Ripple {...rest} highlight={hasHighlight} focus={hasFocus} ref={this.rippleRef} />
         )}
         {this.content}
         {busy && <Spinner blockLevel {...spinnerProps} {...rest} />}

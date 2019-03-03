@@ -13,9 +13,7 @@ const getFontProps = (level, rest) => {
 };
 
 const Header = ({ children, level, ...rest }) => (
-  <Font {...getFontProps(level, rest)}>
-    {children}
-  </Font>
+  <Font {...getFontProps(level, rest)}>{children}</Font>
 );
 
 Header.displayName = 'Header';
