@@ -2,6 +2,7 @@ import React from 'react';
 import { styled } from 'styletron-react';
 
 const Atom = ({
+  css,
   element: Element,
   getColor,
   location,

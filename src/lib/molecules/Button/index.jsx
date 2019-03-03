@@ -101,12 +101,12 @@ Button.displayName = 'Button';
 Button.propTypes = {
   busy: PropTypes.bool,
   children: PropTypes.node,
+  css: PropTypes.shape().isRequired,
   element: PropTypes.node,
   noRipple: PropTypes.bool,
   onPointerDown: PropTypes.func,
   onPointerUp: PropTypes.func,
   spinnerProps: PropTypes.shape(),
-  css: PropTypes.shape().isRequired,
 };
 
 Button.defaultProps = {

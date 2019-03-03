@@ -8,7 +8,7 @@ const Svg = ({ children, color, css, getColor, size, ...rest }) => (
   <Atom
     {...rest}
     element="svg"
-    style={{
+    css={{
       fill: color ? getColor(color) : 'currentColor',
       height: `${size}px`,
       width: `${size}px`,
@@ -23,9 +23,9 @@ const Svg = ({ children, color, css, getColor, size, ...rest }) => (
 Svg.propTypes = {
   children: PropTypes.node.isRequired,
   color: PropTypes.node,
+  css: PropTypes.shape().isRequired,
   getColor: PropTypes.func.isRequired,
   size: PropTypes.number,
-  style: PropTypes.shape().isRequired,
 };
 Svg.defaultProps = {
   color: null,

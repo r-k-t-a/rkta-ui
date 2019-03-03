@@ -7,8 +7,8 @@ import Paper from '../atoms/Paper/style';
 import Svg from '../atoms/Svg/style';
 
 import Button from '../molecules/Button/style';
-import Input from '../molecules/Input/style';
 import InputBase from '../molecules/Input/Base/style';
+import InputOutline from '../molecules/Input/Outline/style';
 import List from '../molecules/List/style';
 import ListItem from '../molecules/List/Item/style';
 import ListItemBody from '../molecules/List/Item/Body/style';
@@ -29,8 +29,8 @@ export default {
   Svg,
 
   Button,
-  Input,
   InputBase,
+  InputOutline,
   List,
   ListItem,
   ListItemBody,

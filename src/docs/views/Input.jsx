@@ -26,12 +26,29 @@ const Typography = () => (
       </Header>
       <Divider />
       <Input
+        // defaultValue="test input"
+        color="secondary"
+        label="Label"
+        placeholder="A placeholder"
+        outlined
+      />
+    </Paper>
+    <Divider invisible />
+    <Paper paper2 style={paperStyle}>
+      <Header h6>
+        Normal
+      </Header>
+      <Divider />
+      <Input
         append={(
           <Addon>
             <Archive />
           </Addon>
         )}
         defaultValue="test input"
+        color="secondary"
+        placeholder="A placeholder"
+        outlined
       />
     </Paper>
   </Fragment>
