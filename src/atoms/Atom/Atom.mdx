@@ -3,31 +3,30 @@ name: Atom
 menu: Atoms
 ---
 
-import { Playground, PropsTable } from 'docz'
-import Atom, { RawAtom } from './'
+import { Playground, PropsTable } from 'docz';
+import Atom, { RawAtom } from './';
 
 # Atom
+
 Everything in the UI is built of atoms.
 
-## Props
+### Props
+
 <PropsTable of={RawAtom} />
 
-## Examples
+### Examples
+
 <Playground>
   <Atom>By default Atom is rendered as div element</Atom>
 </Playground>
 
 <Playground>
-  <Atom element="button">
-    But we can tell it to be any element we want to with `element` prop
-  </Atom>
+  <Atom element="button">But we can tell it to be any element we want to with `element` prop</Atom>
 </Playground>
 
 <Playground>
   <Atom css={{ fontStyle: 'italic' }}>
     We can style atoms with `css` object and get classnames attached automatically
   </Atom>
-  <Atom style={{ textDecoration: 'underline' }}>
-    or with `style` object to get inline styles
-  </Atom>
+  <Atom style={{ textDecoration: 'underline' }}>or with `style` object to get inline styles</Atom>
 </Playground>

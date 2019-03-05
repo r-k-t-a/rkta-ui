@@ -1,0 +1,64 @@
+---
+name: Divider
+menu: Atoms
+---
+
+import { Playground, PropsTable } from 'docz';
+import Divider, { StaticDivider } from './';
+import { Addon, List, ListItem, ListItemBody, Paper } from '../../';
+import Archive from '../../entypo/Archive';
+import Bell from '../../entypo/Bell';
+
+# Divider
+
+Divider is a horizontal rule (line) which usually helps to separate content
+
+### Composition
+
+Divider &larr; [Atom](/src-atoms-atom-atom)
+
+### Props
+
+<PropsTable of={StaticDivider} />
+
+### Basic divider
+
+<Playground>
+  <Paper color14>Text 1</Paper>
+  <Divider />
+  <Paper color14>Text 2</Paper>
+</Playground>
+
+### Dotted divider
+
+<Playground>
+  <Divider dotted />
+</Playground>
+
+### Baseline divider
+
+<Playground>
+  <Paper color14>Text 1</Paper>
+  <Divider baseline />
+  <Paper color14>Text 2</Paper>
+</Playground>
+
+### Inset divider
+
+<Playground>
+  <List>
+    <ListItem>
+      <Addon>
+        <Archive />
+      </Addon>
+      <ListItemBody>List item 1</ListItemBody>
+    </ListItem>
+    <Divider inset />
+    <ListItem>
+      <Addon>
+        <Bell />
+      </Addon>
+      <ListItemBody>List item 2</ListItemBody>
+    </ListItem>
+  </List>
+</Playground>

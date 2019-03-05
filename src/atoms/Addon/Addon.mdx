@@ -4,7 +4,7 @@ menu: Atoms
 ---
 
 import { Playground, PropsTable } from 'docz';
-import Addon, { RawAddon } from './';
+import Addon, { RawAddon } from './index.jsx';
 import { List, ListItem, ListItemBody } from '../../';
 import ArrowRight from '../../entypo/ArrowRight';
 import Cog from '../../entypo/Cog';
@@ -13,11 +13,15 @@ import Cog from '../../entypo/Cog';
 
 Addons are meant to be used along with ListItems, to append or prepend to main content
 
-## Props
+### Composition
+
+Addon &larr; [Atom](/src-atoms-atom-atom)
+
+### Props
 
 <PropsTable of={RawAddon} />
 
-## Examples
+### Examples
 
 <Playground>
   <List color10>

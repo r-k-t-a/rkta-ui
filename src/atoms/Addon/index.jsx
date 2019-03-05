@@ -14,11 +14,11 @@ Addon.displayName = 'Addon';
 Addon.propTypes = {
   /** React node */
   children: PropTypes.node.isRequired,
-  /** Padding: 0 */
+  /** Reset Paddings */
   fitAll: PropTypes.bool,
-  /** Left Padding: 0 */
+  /** Reset Left Padding */
   fitLeft: PropTypes.bool,
-  /** Right Padding: 0 */
+  /** Reset Right Padding */
   fitRight: PropTypes.bool,
 };
 Addon.defaultProps = {
@@ -27,6 +27,6 @@ Addon.defaultProps = {
   fitRight: false,
 };
 
-export const RawAdon = Addon;
+export const RawAddon = Addon;
 
 export default withStyle(Addon);

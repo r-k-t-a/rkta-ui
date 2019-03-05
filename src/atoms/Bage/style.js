@@ -7,6 +7,9 @@ export default css({
     padding: '0 calc(.48ex + 4px)',
     verticalAlign: 'middle',
   },
+  fitAll: {
+    margin: 0,
+  },
   fitLeft: {
     marginLeft: 0,
   },

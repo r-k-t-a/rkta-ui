@@ -1,0 +1,47 @@
+---
+name: Bage
+menu: Atoms
+---
+
+import { Playground, PropsTable } from 'docz';
+import Bage, { RawBage } from './';
+
+# Bage
+
+Bage is a preconfigured sheet of paper, which can be used in different ways.
+Unlike it's done in Material UI R•K•T•A Bages are not opinionated about their positions.
+
+### Composition
+
+Bage &larr;
+[Paper](/src-atoms-paper-paper) &larr;
+[Font](/src-atoms-paper-paper) &larr;
+[Atom](/src-atoms-atom-atom)
+
+### Props
+
+<PropsTable of={RawBage} />
+
+### Basic example
+
+<Playground>
+  <Bage primary>A bage</Bage>
+  <Bage secondary color="paper">
+    A bage
+  </Bage>
+  <Bage success>A bage</Bage>
+</Playground>
+
+### Fitting bages together
+
+<Playground>
+  <Bage primary fitRight hardRight>
+    A bage
+  </Bage>
+  <Bage color12 fitAll hard>
+    A bage
+  </Bage>
+  <Bage warning fitLeft hardLeft>
+    A bage
+  </Bage>
+</Playground>
