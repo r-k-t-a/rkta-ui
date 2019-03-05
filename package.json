@@ -11,7 +11,7 @@
   "scripts": {
     "docz:dev": "docz dev",
     "docz:build": "docz build",
-    "prelib": "npm run test && npm run docz:build && npm run shrinkwrap",
+    "prelib": "npm run test && && npm run lint && npm run docz:build && npm run shrinkwrap",
     "lib": "babel src -d lib --copy-files",
     "lib:watch": "babel src -w -d lib --copy-files",
     "lint": "eslint src --ext .js,.jsx",

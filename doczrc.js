@@ -1,5 +1,5 @@
 export default {
-  dest: 'docz',
+  dest: 'docs',
   source: 'src',
   title: 'R·K·T·A UI',
   wrapper: 'src/DoczWrapper',
