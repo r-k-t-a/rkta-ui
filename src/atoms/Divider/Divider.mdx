@@ -5,7 +5,7 @@ menu: Atoms
 
 import { Playground, PropsTable } from 'docz';
 import Divider, { StaticDivider } from './';
-import { Addon, List, ListItem, ListItemBody, Paper } from '../../';
+import { Addon, List, ListButton, ListItemBody, Paper } from '../../';
 import Archive from '../../entypo/Archive';
 import Bell from '../../entypo/Bell';
 
@@ -47,18 +47,18 @@ Divider &larr; [Atom](/src-atoms-atom-atom)
 
 <Playground>
   <List>
-    <ListItem>
+    <ListButton>
       <Addon>
         <Archive />
       </Addon>
       <ListItemBody>List item 1</ListItemBody>
-    </ListItem>
+    </ListButton>
     <Divider inset />
-    <ListItem>
+    <ListButton>
       <Addon>
         <Bell />
       </Addon>
       <ListItemBody>List item 2</ListItemBody>
-    </ListItem>
+    </ListButton>
   </List>
 </Playground>
