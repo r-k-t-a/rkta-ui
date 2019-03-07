@@ -27,7 +27,7 @@ TabsIndicator.propTypes = {
   activeTab: PropTypes.number.isRequired,
   color: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   height: PropTypes.number.isRequired,
-  domNode: PropTypes.instanceOf(Element),
+  domNode: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 TabsIndicator.defaultProps = {
   color: undefined,

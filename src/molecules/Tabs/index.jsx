@@ -48,6 +48,8 @@ class Tabs extends Component {
       indicatorHeight,
       getColor,
       onChange,
+      reverse,
+      right,
       ...rest
     } = this.props;
     const { domNode } = this.state;
