@@ -13,6 +13,7 @@ import List from '../molecules/List/style';
 import ListItem from '../molecules/List/Item/style';
 import ListItemBody from '../molecules/List/Item/Body/style';
 import Spinner from '../molecules/Spinner/style';
+import Tabs from '../molecules/Tabs/Tabs.style';
 
 import Ripple from '../fx/Ripple/style';
 
@@ -35,6 +36,7 @@ export default {
   ListItem,
   ListItemBody,
   Spinner,
+  Tabs,
 
   Ripple,
 };

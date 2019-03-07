@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'styletron-react';
-import merge from 'lodash.merge';
+import merge from 'lodash/merge';
 
 import Context from './Context';
 import defaultTheme from './defaultTheme';
@@ -28,13 +28,16 @@ function modifyTheme(nextTheme) {
 export default class UiProvider extends Component {
   static propTypes = {
     changeTheme: PropTypes.func,
+    children: PropTypes.node.isRequired,
     location: PropTypes.string,
+    modifyElement: PropTypes.func,
     theme: PropTypes.shape(),
   };
 
   static defaultProps = {
     changeTheme() {},
     location: null,
+    modifyElement: null,
     theme: {},
   };
 

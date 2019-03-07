@@ -1,6 +1,5 @@
 .docz
 .babelrc
 
-docz
+docs
 src
-webpack.config.js

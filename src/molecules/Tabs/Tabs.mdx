@@ -1,0 +1,43 @@
+---
+name: Tabs
+menu: Molecules
+---
+
+import { Playground, PropsTable } from 'docz';
+import Tabs, { SimpleTabs } from './'
+import { Button } from '../../';
+
+# Tabs
+<PropsTable of={SimpleTabs} />
+
+### Default usage
+<Playground>
+  <Tabs>
+    <Button>Tab</Button>
+    <Button>Another Tab</Button>
+  </Tabs>
+</Playground>
+
+### Center tabs
+<Playground>
+  <Tabs color="primary" center>
+    <Button>Tab</Button>
+    <Button>Another Tab</Button>
+  </Tabs>
+</Playground>
+
+### Align right
+<Playground>
+  <Tabs color="secondary" right>
+    <Button>Tab</Button>
+    <Button>Another Tab</Button>
+  </Tabs>
+</Playground>
+
+### Reverse
+<Playground>
+  <Tabs color="secondary" reverse right>
+    <Button>Tab</Button>
+    <Button>Another Tab</Button>
+  </Tabs>
+</Playground>

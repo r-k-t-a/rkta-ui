@@ -4,27 +4,24 @@ menu: Atoms
 ---
 
 import { Playground, PropsTable } from 'docz';
-import Addon, { RawAddon } from './index.jsx';
+import Addon, { RawAddon } from './';
 import { List, ListItem, ListItemBody } from '../../';
 import ArrowRight from '../../entypo/ArrowRight';
 import Cog from '../../entypo/Cog';
 
 # Addon
-
 Addons are meant to be used along with ListItems, to append or prepend to main content
 
 ### Composition
-
 Addon &larr; [Atom](/src-atoms-atom-atom)
 
 ### Props
-
 <PropsTable of={RawAddon} />
 
 ### Examples
-
 <Playground>
   <List color10>
+    {console.log('ListItem', ListItem)}
     <ListItem transparent>
       <Addon>
         <ArrowRight />

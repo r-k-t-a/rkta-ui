@@ -5,18 +5,18 @@ import { styled } from 'styletron-react';
 const Atom = ({
   css,
   element: Element,
-  getColor,
-  location,
-  theme,
-  changeTheme,
+  getColor, // eslint-disable-line react/prop-types
+  location, // eslint-disable-line react/prop-types
+  theme, // eslint-disable-line react/prop-types
+  changeTheme, // eslint-disable-line react/prop-types
   atomRef,
   ...rest
 }) => <Element {...rest} ref={atomRef} />;
 
 Atom.propTypes = {
-  atomRef: PropTypes.func,
+  atomRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({})]),
   css: PropTypes.shape({}),
-  element: PropTypes.element,
+  element: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
 };
 
 Atom.defaultProps = {

@@ -24,6 +24,9 @@ const InputContainer = ({ children, hasAddons, labelIsActive, labelWidth, outlin
 
 InputContainer.propTypes = {
   children: PropTypes.node.isRequired,
+  hasAddons: PropTypes.bool.isRequired,
+  labelIsActive: PropTypes.bool.isRequired,
+  labelWidth: PropTypes.number.isRequired,
   outlined: PropTypes.bool.isRequired,
 };
 

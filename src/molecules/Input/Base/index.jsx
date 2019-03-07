@@ -19,13 +19,7 @@ const InputBase = ({
   ...rest
 }) => (
   <ListItemBody fitTop fitBottom>
-    <Font
-      {...rest}
-      element="input"
-      css={css}
-      placeholder={label ? undefined : placeholder}
-      value={value}
-    />
+    <Font {...rest} element="input" css={css} placeholder={label || placeholder} value={value} />
     {label && (
       <Label
         active={labelIsActive}
@@ -39,10 +33,24 @@ const InputBase = ({
   </ListItemBody>
 );
 
+InputBase.displayName = 'InputBase';
 InputBase.propTypes = {
+  css: PropTypes.shape(),
+  color: PropTypes.string,
+  hasFocus: PropTypes.bool.isRequired,
+  label: PropTypes.node,
   labelIsActive: PropTypes.bool.isRequired,
+  outlined: PropTypes.bool,
+  placeholder: PropTypes.node,
+  setLabelWidth: PropTypes.func.isRequired,
   value: PropTypes.node.isRequired,
 };
-InputBase.displayName = 'InputBase';
+InputBase.defaultProps = {
+  css: {},
+  color: null,
+  outlined: false,
+  placeholder: null,
+  label: undefined,
+};
 
 export default withStyle(InputBase);

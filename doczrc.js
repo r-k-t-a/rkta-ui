@@ -1,6 +1,6 @@
 export default {
   dest: 'docs',
-  source: 'src',
+  src: 'src',
   title: 'R·K·T·A UI',
   wrapper: 'src/DoczWrapper',
 };

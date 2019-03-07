@@ -9,7 +9,7 @@ const getFontProps = (color, getColor, rest) => {
   return { ...rest, css: nextCss };
 };
 
-const Font = ({ children, getColor, color, theme, ...rest }) => (
+const Font = ({ children, getColor, color, ...rest }) => (
   <Atom element="span" {...getFontProps(color, getColor, rest)}>
     {children}
   </Atom>

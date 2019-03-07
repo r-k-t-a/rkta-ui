@@ -104,21 +104,26 @@ Button.displayName = 'Button';
 Button.propTypes = {
   busy: PropTypes.bool,
   children: PropTypes.node,
+  color: PropTypes.string,
   css: PropTypes.shape().isRequired,
   element: PropTypes.node,
+  getColor: PropTypes.func.isRequired,
   noRipple: PropTypes.bool,
   onPointerDown: PropTypes.func,
   onPointerUp: PropTypes.func,
+  round: PropTypes.bool,
   spinnerProps: PropTypes.shape(),
 };
 
 Button.defaultProps = {
   busy: false,
   children: null,
+  color: null,
   element: 'button',
   noRipple: false,
   onPointerDown() {},
   onPointerUp() {},
+  round: false,
   spinnerProps: null,
 };
 

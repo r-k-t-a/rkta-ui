@@ -60,6 +60,7 @@ Input.displayName = 'Input';
 Input.propTypes = {
   append: PropTypes.node,
   defaultValue: PropTypes.node,
+  label: PropTypes.node,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
@@ -71,6 +72,7 @@ Input.propTypes = {
 Input.defaultProps = {
   append: null,
   defaultValue: '',
+  label: null,
   onBlur() {},
   onChange() {},
   onFocus() {},

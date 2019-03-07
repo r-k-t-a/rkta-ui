@@ -29,6 +29,7 @@ InputOutline.displayName = 'InputOutline';
 InputOutline.propTypes = {
   children: PropTypes.node.isRequired,
   css: PropTypes.shape().isRequired,
+  labelIsActive: PropTypes.bool.isRequired,
   labelWidth: PropTypes.number.isRequired,
 };
 
