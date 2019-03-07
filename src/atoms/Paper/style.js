@@ -21,7 +21,17 @@ export default css({
   hardLeft: { borderBottomLeftRadius: '0', borderTopLeftRadius: '0' },
   hardTop: { borderTopLeftRadius: '0', borderTopRightRadius: '0' },
   hardRight: { borderBottomRightRadius: '0', borderTopRightRadius: '0' },
-  round: { borderRadius: '50%' },
-  rounded: { borderRadius: '1200vw' },
+  round: {
+    borderBottomLeftRadius: '50%',
+    borderBottomRightRadius: '50%',
+    borderTopLeftRadius: '50%',
+    borderTopRightRadius: '50%',
+  },
+  rounded: {
+    borderBottomLeftRadius: '1200vw',
+    borderBottomRightRadius: '1200vw',
+    borderTopLeftRadius: '1200vw',
+    borderTopRightRadius: '1200vw',
+  },
   transparent: { backgroundColor: 'transparent' },
 });
