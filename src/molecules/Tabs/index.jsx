@@ -23,9 +23,11 @@ class Tabs extends Component {
     return Children.map(children, (child, index) => {
       const nextProps = {
         hardBottom: true,
-        onClick: () => {
+        onClick: event => {
           this.setState({ activeTab: index });
           this.props.onChange(index);
+          const { onClick } = child.props;
+          if (typeof onClick === 'function') onClick(event);
         },
       };
       if (index === activeTab) {
