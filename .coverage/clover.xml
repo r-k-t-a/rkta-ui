@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1552026322495" clover="3.2.0">
-  <project timestamp="1552026322495" name="All files">
-    <metrics statements="255" coveredstatements="119" conditionals="83" coveredconditionals="0" methods="83" coveredmethods="2" elements="421" coveredelements="121" complexity="0" loc="255" ncloc="255" packages="25" files="51" classes="51"/>
+<coverage generated="1552159881814" clover="3.2.0">
+  <project timestamp="1552159881815" name="All files">
+    <metrics statements="262" coveredstatements="119" conditionals="97" coveredconditionals="0" methods="84" coveredmethods="2" elements="443" coveredelements="121" complexity="0" loc="262" ncloc="262" packages="25" files="52" classes="52"/>
     <package name="Theme">
       <metrics statements="40" coveredstatements="24" conditionals="14" coveredconditionals="0" methods="9" coveredmethods="1"/>
       <file name="Context.js" path="/Users/se/www/maintined/rkta-ui/src/Theme/Context.js">
@@ -261,37 +261,47 @@
       </file>
     </package>
     <package name="molecules.Button">
-      <metrics statements="25" coveredstatements="4" conditionals="10" coveredconditionals="0" methods="13" coveredmethods="0"/>
+      <metrics statements="32" coveredstatements="4" conditionals="24" coveredconditionals="0" methods="14" coveredmethods="0"/>
       <file name="index.jsx" path="/Users/se/www/maintined/rkta-ui/src/molecules/Button/index.jsx">
-        <metrics statements="25" coveredstatements="4" conditionals="10" coveredconditionals="0" methods="13" coveredmethods="0"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+        <metrics statements="29" coveredstatements="4" conditionals="20" coveredconditionals="0" methods="12" coveredmethods="0"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
+        <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
-        <line num="49" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="47" count="0" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="75" count="0" type="stmt"/>
+        <line num="51" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="52" count="0" type="stmt"/>
         <line num="77" count="0" type="stmt"/>
-        <line num="78" count="0" type="stmt"/>
-        <line num="103" count="1" type="stmt"/>
-        <line num="104" count="1" type="stmt"/>
-        <line num="118" count="1" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="113" count="1" type="stmt"/>
+        <line num="114" count="1" type="stmt"/>
+        <line num="147" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="148" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="152" count="0" type="stmt"/>
+        <line num="162" count="1" type="stmt"/>
+        <line num="184" count="1" type="stmt"/>
       </file>
       <file name="style.js" path="/Users/se/www/maintined/rkta-ui/src/molecules/Button/style.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="wrapChild.jsx" path="/Users/se/www/maintined/rkta-ui/src/molecules/Button/wrapChild.jsx">
+        <metrics statements="3" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
       </file>
     </package>
     <package name="molecules.Input">
@@ -421,17 +431,17 @@
     <package name="molecules.Spinner">
       <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="index.jsx" path="/Users/se/www/maintined/rkta-ui/src/molecules/Spinner/index.jsx">
-        <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
+        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
       </file>
       <file name="style.js" path="/Users/se/www/maintined/rkta-ui/src/molecules/Spinner/style.js">
-        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
       </file>
     </package>
     <package name="molecules.Tabs">

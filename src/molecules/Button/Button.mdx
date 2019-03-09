@@ -1,6 +1,125 @@
 ---
-name: Tabs
+name: Button
 menu: Molecules
 ---
 
+import { Playground, PropsTable } from 'docz';
+import Button, { SimpleButton } from './';
+import { Atom } from '../../';
+
 # Button
+
+### Props 
+<PropsTable of={SimpleButton} />
+
+### Plain
+<Playground>
+  <Atom css={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
+    <Button primary>
+      Button
+    </Button>
+    <Button rize={2}>
+      Color
+    </Button>
+    <Button outline color="secondary">
+      Color
+    </Button>
+    <Button busy outline color="secondary">
+      Color
+    </Button>
+    <Button secondary color="paper">
+      Secondary
+    </Button>
+  </Atom>
+</Playground>
+
+
+### AutoHeight
+<Playground>
+  <Atom css={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
+    <Button autoHeight color8>
+      Button
+    </Button>
+    <Button autoHeight color9 vertical>
+      <Atom>Line</Atom>
+      <Atom>Longer Line</Atom>
+    </Button>
+  </Atom>
+</Playground>
+
+### BlockLevel
+<Playground>
+  <Button blockLevel primary>
+    Button
+  </Button>
+</Playground>
+
+
+### Text Fitting
+<Playground>
+  <Atom css={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
+    <Button fitLeft color1>
+      Fit Left
+    </Button>
+    
+    <Button fitAll color10>
+      Fit All
+    </Button>
+
+    <Button fitRight color5>
+      Fit Right
+    </Button>
+  </Atom>
+</Playground>
+
+### Sizing
+<Playground>
+  <Atom css={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
+    <Button height="88px" color1>
+      Custom height
+    </Button>
+
+    <Button large color3>
+      Large
+    </Button>
+    
+    <Button color6>
+      Normal
+    </Button>
+
+    <Button small color9>
+      Small
+    </Button>
+  </Atom>
+</Playground>
+
+### noRipple
+<Playground>
+  <Button noRipple color12>
+    noRipple
+  </Button>
+</Playground>
+
+
+### round
+<Playground>
+  <Atom css={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
+    <Button primary round size={40}>
+      40
+    </Button>
+    <Button primary round busy size={48}>
+      48
+    </Button>
+    <Button primary round size={64}>
+      64
+    </Button>
+  </Atom>
+</Playground>
+
+
+### spinnerProps
+<Playground>
+  <Button busy large color15 spinnerProps={{ borderWidth:"20px", size: '40px' }}>
+    round
+  </Button>
+</Playground>

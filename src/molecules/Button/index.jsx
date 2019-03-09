@@ -1,30 +1,13 @@
-import React, { isValidElement, cloneElement, Children, Component, createRef } from 'react';
+import React, { Children, Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 
-import Atom from '../../atoms/Atom';
 import Paper from '../../atoms/Paper';
 
 import Ripple from '../../fx/Ripple';
 import Spinner from '../Spinner';
 
 import withStyle from '../../Theme/withStyle';
-
-const makeWrapChild = busy => child => {
-  const css = busy
-    ? { visibility: 'hidden' }
-    : {
-        pointerEvents: 'none',
-        position: 'relative',
-        zIndex: 1,
-      };
-  return isValidElement(child) ? (
-    cloneElement(child, { css: { ...child.css, ...css } })
-  ) : (
-    <Atom element="span" css={css}>
-      {child}
-    </Atom>
-  );
-};
+import wrapChild from './wrapChild';
 
 class Button extends Component {
   state = {
@@ -35,44 +18,63 @@ class Button extends Component {
 
   rippleRef = createRef();
 
+  get css() {
+    const { css, round } = this.props;
+    if (round) {
+      const { width, height, ...rest } = css;
+      return { ...rest, padding: 0 };
+    }
+    return css;
+  }
   get content() {
     const { busy, children } = this.props;
-    return Children.map(children, makeWrapChild(busy));
+    return Children.map(children, wrapChild(busy));
   }
 
-  get css() {
-    const { color, css, getColor, round } = this.props;
-    let result = {
-      ...css,
-      borderColor: getColor(color),
-    };
-    if (round) {
-      const { width, height, ...rest } = result;
-      result = { ...rest, padding: 0 };
-    }
-    return result;
-  }
-
-  handleBlur = () => this.rippleRef.current.removeFocus();
-
-  handleFocus = event => this.rippleRef.current.setFocus(event, this.contentRef);
-
+  handleBlur = () => {
+    const { current } = this.rippleRef;
+    if (current) current.removeFocus();
+  };
+  handleFocus = event => {
+    const { current } = this.rippleRef;
+    if (current) current.setFocus(event, this.contentRef);
+  };
   handleMouseEnter = () => this.setState({ hasHighlight: true });
-
   handleMouseLeave = () => this.setState({ hasHighlight: false });
-
   handleDown = event => {
-    this.rippleRef.current.pushEvent(event);
+    const { current } = this.rippleRef;
+    if (current) current.pushEvent(event);
     this.props.onPointerDown(event);
   };
-
   handleUp = event => {
-    this.rippleRef.current.release(event);
+    const { current } = this.rippleRef;
+    if (current) current.release(event);
     this.props.onPointerUp(event);
   };
 
   render() {
-    const { busy, children, css, element, noRipple, spinnerProps, ...rest } = this.props;
+    const {
+      autoHeight,
+      blockLevel,
+      busy,
+      children,
+      css,
+      color,
+      element,
+      fitAll,
+      fitLeft,
+      fitRight,
+      large,
+      noRipple,
+      onPointerDown,
+      onPointerUp,
+      outline,
+      round,
+      small,
+      spinnerProps,
+      vertical,
+      ...rest
+    } = this.props;
 
     const { hasFocus, hasHighlight } = this.state;
     return (
@@ -81,6 +83,7 @@ class Button extends Component {
         element={element}
         tabIndex={0}
         atomRef={this.contentRef}
+        color={color}
         {...rest}
         css={this.css}
         onBlur={this.handleBlur}
@@ -89,12 +92,19 @@ class Button extends Component {
         onMouseLeave={this.handleMouseLeave}
         onPointerDown={this.handleDown}
         onPointerUp={this.handleUp}
+        round={round}
       >
         {!noRipple && (
-          <Ripple {...rest} highlight={hasHighlight} focus={hasFocus} ref={this.rippleRef} />
+          <Ripple
+            {...rest}
+            color={color}
+            highlight={hasHighlight}
+            focus={hasFocus}
+            ref={this.rippleRef}
+          />
         )}
         {this.content}
-        {busy && <Spinner blockLevel {...spinnerProps} {...rest} />}
+        {busy && <Spinner blockLevel color={color} {...spinnerProps} />}
       </Paper>
     );
   }
@@ -102,29 +112,75 @@ class Button extends Component {
 
 Button.displayName = 'Button';
 Button.propTypes = {
+  /** height: auto */
+  autoHeight: PropTypes.bool,
+  /** display: block */
+  blockLevel: PropTypes.bool,
+  /** Enables spinner state */
   busy: PropTypes.bool,
-  children: PropTypes.node,
+  /** Button content */
+  children: PropTypes.node.isRequired,
+  /** Sets color for texts and borders */
   color: PropTypes.string,
-  css: PropTypes.shape().isRequired,
+  /** Custom styling */
+  css: PropTypes.shape(),
+  /** Change dom element */
   element: PropTypes.node,
-  getColor: PropTypes.func.isRequired,
+  /** Disable paddings */
+  fitAll: PropTypes.bool,
+  /** Disable left padding  */
+  fitLeft: PropTypes.bool,
+  /** Disable right padding  */
+  fitRight: PropTypes.bool,
+  /** Large size  */
+  large: PropTypes.bool,
+  /** Disable ripple effect  */
   noRipple: PropTypes.bool,
   onPointerDown: PropTypes.func,
   onPointerUp: PropTypes.func,
+  /** Otlined mode  */
+  outline: PropTypes.bool,
+  /** Rounds button  */
   round: PropTypes.bool,
+  /** Required   */
+  size(props, propName) {
+    if (props.round === true && props[propName] === undefined) {
+      return typeof props[propName] === 'number'
+        ? new Error('Please provide a size!')
+        : new Error('Size should be a number');
+    }
+    return undefined;
+  },
+  /** Small size  */
+  small: PropTypes.bool,
+  /** Spinner props  */
   spinnerProps: PropTypes.shape(),
+  /** Render children vertically  */
+  vertical: PropTypes.bool,
 };
 
 Button.defaultProps = {
+  autoHeight: false,
+  blockLevel: false,
   busy: false,
-  children: null,
   color: null,
+  css: {},
   element: 'button',
+  fitAll: false,
+  fitLeft: false,
+  fitRight: false,
+  large: false,
   noRipple: false,
   onPointerDown() {},
   onPointerUp() {},
+  outline: false,
   round: false,
+  size: null,
+  small: false,
   spinnerProps: null,
+  vertical: false,
 };
+
+export const SimpleButton = Button;
 
 export default withStyle(Button);

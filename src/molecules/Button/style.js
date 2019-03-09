@@ -3,10 +3,13 @@ import { text } from '../../Theme/color';
 
 export default css({
   defaultStyle: {
+    alignItems: 'center',
     borderWidth: 0,
     borderColor: text,
     cursor: 'pointer',
+    display: 'inline-flex',
     height: '48px',
+    justifyContent: 'center',
     outline: 'none',
     padding: '0 16px',
   },
@@ -32,5 +35,8 @@ export default css({
   small: {
     height: '32px',
     padding: '0 8px',
+  },
+  vertical: {
+    flexDirection: 'column',
   },
 });

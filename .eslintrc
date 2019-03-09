@@ -17,6 +17,7 @@
     - react
     - prettier
   rules:
+    lines-between-class-members: off
     prettier/prettier: error
     react/destructuring-assignment: off
 
