@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Atom from '../Atom';
 import withStyle from '../../Theme/withStyle';
 
-const Addon = ({ children, ...props }) => (
+const Addon = ({ children, fitAll, fitLeft, fitRight, ...props }) => (
   <Atom element="span" {...props}>
     {children}
   </Atom>
