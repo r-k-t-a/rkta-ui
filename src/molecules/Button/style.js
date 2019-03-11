@@ -10,6 +10,7 @@ export default css({
     display: 'inline-flex',
     height: '48px',
     justifyContent: 'center',
+    minHeight: '48px',
     outline: 'none',
     padding: '0 16px',
   },
@@ -25,6 +26,7 @@ export default css({
   fitRight: { paddingRight: 0 },
   large: {
     height: '56px',
+    minHeight: '56px',
     padding: '0 32px',
   },
   outline: {
@@ -34,6 +36,7 @@ export default css({
   },
   small: {
     height: '32px',
+    minHeight: '32px',
     padding: '0 8px',
   },
   vertical: {
