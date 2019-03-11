@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1552287891030" clover="3.2.0">
-  <project timestamp="1552287891030" name="All files">
-    <metrics statements="262" coveredstatements="119" conditionals="97" coveredconditionals="0" methods="84" coveredmethods="2" elements="443" coveredelements="121" complexity="0" loc="262" ncloc="262" packages="25" files="52" classes="52"/>
+<coverage generated="1552289357084" clover="3.2.0">
+  <project timestamp="1552289357084" name="All files">
+    <metrics statements="263" coveredstatements="119" conditionals="97" coveredconditionals="0" methods="84" coveredmethods="2" elements="444" coveredelements="121" complexity="0" loc="263" ncloc="263" packages="25" files="52" classes="52"/>
     <package name="Theme">
       <metrics statements="40" coveredstatements="24" conditionals="14" coveredconditionals="0" methods="9" coveredmethods="1"/>
       <file name="Context.js" path="/Users/se/www/maintined/rkta-ui/src/Theme/Context.js">
@@ -109,14 +109,15 @@
       </file>
     </package>
     <package name="atoms.Divider">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="index.jsx" path="/Users/se/www/maintined/rkta-ui/src/atoms/Divider/index.jsx">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
       </file>
       <file name="style.js" path="/Users/se/www/maintined/rkta-ui/src/atoms/Divider/style.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>

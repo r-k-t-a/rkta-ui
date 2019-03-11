@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import Atom from '../Atom';
 import withStyle from '../../Theme/withStyle';
 
-const Divider = ({ ...rest }) => <Atom element="hr" {...rest} />;
+const Divider = ({ baseline, dotted, inset, invisible, ...rest }) => (
+  <Atom element="hr" {...rest} />
+);
 Divider.displayName = 'Divider';
 
 Divider.propTypes = {
