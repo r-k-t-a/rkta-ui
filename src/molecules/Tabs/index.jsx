@@ -18,11 +18,14 @@ class Tabs extends Component {
   }
 
   get children() {
-    const { children, color } = this.props;
+    const { children, color, noIndicator } = this.props;
     const { activeTab } = this;
-    return Children.map(children, (child, index) => {
+    const childrenArray = Children.toArray(children);
+    return childrenArray.map((child, index) => {
       const nextProps = {
-        hardBottom: true,
+        hardLeft: noIndicator && index > 0 ? true : undefined,
+        hardRight: noIndicator && index < childrenArray.length - 1 ? true : undefined,
+        hardBottom: noIndicator ? undefined : true,
         onClick: event => {
           this.setState({ activeTab: index });
           this.props.onChange(index);
@@ -49,6 +52,7 @@ class Tabs extends Component {
       color,
       indicatorHeight,
       getColor,
+      noIndicator,
       onChange,
       reverse,
       right,
@@ -58,12 +62,14 @@ class Tabs extends Component {
     return (
       <Paper {...rest} atomRef={this.ref}>
         {this.children}
-        <Indicator
-          activeTab={this.activeTab}
-          color={getColor(color)}
-          height={indicatorHeight}
-          domNode={domNode}
-        />
+        {!noIndicator && (
+          <Indicator
+            activeTab={this.activeTab}
+            color={getColor(color)}
+            height={indicatorHeight}
+            domNode={domNode}
+          />
+        )}
       </Paper>
     );
   }
@@ -82,6 +88,8 @@ Tabs.propTypes = {
   getColor: PropTypes.func.isRequired,
   // Indicator height
   indicatorHeight: PropTypes.number,
+  // Do not render indicator
+  noIndicator: PropTypes.bool,
   // Tab click handler
   onChange: PropTypes.func,
   // Reverse tabs
@@ -94,6 +102,7 @@ Tabs.defaultProps = {
   center: false,
   color: 'text',
   indicatorHeight: 2,
+  noIndicator: false,
   onChange() {},
   reverse: false,
   right: false,
