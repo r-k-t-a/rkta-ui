@@ -3,9 +3,16 @@ import * as colors from '../../Theme/color';
 
 const { paper } = colors;
 
+const roundCorners = radius => ({
+  borderBottomLeftRadius: radius,
+  borderBottomRightRadius: radius,
+  borderTopLeftRadius: radius,
+  borderTopRightRadius: radius,
+});
+
 export default css({
   defaultStyle: {
-    borderRadius: '3px',
+    ...roundCorners('3px'),
     boxSizing: 'border-box',
     backgroundColor: paper,
     position: 'relative',
@@ -22,16 +29,10 @@ export default css({
   hardTop: { borderTopLeftRadius: '0', borderTopRightRadius: '0' },
   hardRight: { borderBottomRightRadius: '0', borderTopRightRadius: '0' },
   round: {
-    borderBottomLeftRadius: '50%',
-    borderBottomRightRadius: '50%',
-    borderTopLeftRadius: '50%',
-    borderTopRightRadius: '50%',
+    ...roundCorners('50%'),
   },
   rounded: {
-    borderBottomLeftRadius: '1200vw',
-    borderBottomRightRadius: '1200vw',
-    borderTopLeftRadius: '1200vw',
-    borderTopRightRadius: '1200vw',
+    ...roundCorners('1200vw'),
   },
   transparent: { backgroundColor: 'transparent' },
 });
