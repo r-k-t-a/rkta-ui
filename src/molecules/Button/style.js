@@ -18,7 +18,7 @@ export default css({
     height: 'auto',
   },
   blockLevel: {
-    display: 'block',
+    display: 'flex',
     width: '100%',
   },
   fitAll: { padding: 0 },

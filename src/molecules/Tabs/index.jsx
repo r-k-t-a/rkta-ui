@@ -22,6 +22,7 @@ class Tabs extends Component {
     const { activeTab } = this;
     const childrenArray = Children.toArray(children);
     return childrenArray.map((child, index) => {
+      const isActive = index === activeTab;
       const nextProps = {
         hardLeft: noIndicator && index > 0 ? true : undefined,
         hardRight: noIndicator && index < childrenArray.length - 1 ? true : undefined,
@@ -33,7 +34,7 @@ class Tabs extends Component {
           if (typeof onClick === 'function') onClick(event);
         },
       };
-      if (index === activeTab) {
+      if (isActive) {
         Object.assign(nextProps, {
           color: child.props.color || color,
         });
