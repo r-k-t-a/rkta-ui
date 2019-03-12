@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1552365646861" clover="3.2.0">
-  <project timestamp="1552365646861" name="All files">
-    <metrics statements="265" coveredstatements="120" conditionals="109" coveredconditionals="0" methods="85" coveredmethods="3" elements="459" coveredelements="123" complexity="0" loc="265" ncloc="265" packages="25" files="52" classes="52"/>
+<coverage generated="1552371490915" clover="3.2.0">
+  <project timestamp="1552371490916" name="All files">
+    <metrics statements="266" coveredstatements="120" conditionals="109" coveredconditionals="0" methods="85" coveredmethods="3" elements="460" coveredelements="123" complexity="0" loc="266" ncloc="266" packages="25" files="52" classes="52"/>
     <package name="Theme">
       <metrics statements="40" coveredstatements="24" conditionals="14" coveredconditionals="0" methods="9" coveredmethods="1"/>
       <file name="Context.js" path="/Users/se/www/maintined/rkta-ui/src/Theme/Context.js">
@@ -447,7 +447,7 @@
       </file>
     </package>
     <package name="molecules.Tabs">
-      <metrics statements="29" coveredstatements="7" conditionals="20" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <metrics statements="30" coveredstatements="7" conditionals="20" coveredconditionals="0" methods="8" coveredmethods="0"/>
       <file name="Indicator.jsx" path="/Users/se/www/maintined/rkta-ui/src/molecules/Tabs/Indicator.jsx">
         <metrics statements="8" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="7" count="1" type="stmt"/>
@@ -463,28 +463,29 @@
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
       <file name="index.jsx" path="/Users/se/www/maintined/rkta-ui/src/molecules/Tabs/index.jsx">
-        <metrics statements="21" coveredstatements="4" conditionals="18" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <metrics statements="22" coveredstatements="4" conditionals="18" coveredconditionals="0" methods="7" coveredmethods="0"/>
         <line num="17" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
-        <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
         <line num="61" count="0" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
-        <line num="78" count="1" type="stmt"/>
-        <line num="101" count="1" type="stmt"/>
-        <line num="111" count="1" type="stmt"/>
-        <line num="113" count="1" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="112" count="1" type="stmt"/>
+        <line num="114" count="1" type="stmt"/>
       </file>
     </package>
     <package name="util">
