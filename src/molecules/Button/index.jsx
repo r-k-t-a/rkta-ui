@@ -21,7 +21,7 @@ class Button extends Component {
   get css() {
     const { css, round } = this.props;
     if (round) {
-      const { width, height, ...rest } = css;
+      const { width, height, minHeight, ...rest } = css;
       return { ...rest, padding: 0 };
     }
     return css;

@@ -10,10 +10,10 @@ const modifyProps = ({ css, rize, size, theme, ...props }) => {
     const blur = Math.max(rize ** 3, 5);
     Object.assign(nextCss, {
       boxShadow: `
-          0px ${rize}px ${blur}px 0px rgba(0, 0, 0, 0.2),
-          0px ${rize * 2}px ${blur / 2}px 0px rgba(0, 0, 0, 0.14),
-          0px ${rize * 3}px ${blur / rize}1px ${-rize / 2}px rgba(0, 0, 0, 0.12)
-        `,
+        0px ${rize}px ${blur}px 0px rgba(0, 0, 0, 0.2),
+        0px ${rize * 2}px ${blur / 2}px 0px rgba(0, 0, 0, 0.14),
+        0px ${rize * 3}px ${blur / rize}1px ${-rize / 2}px rgba(0, 0, 0, 0.12)
+      `,
     });
   }
   if (size) {
