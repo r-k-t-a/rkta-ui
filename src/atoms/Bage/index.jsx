@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import Paper from '../Paper';
 import withStyle from '../../Theme/withStyle';
 
-const Bage = props => <Paper rounded overline nowrap {...props} />;
+const Bage = ({ fitAll, fitLeft, fitRight, ...rest }) => (
+  <Paper rounded overline nowrap {...rest} />
+);
 
 Bage.displayName = 'Bage';
 Bage.propTypes = {
