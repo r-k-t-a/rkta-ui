@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1552569255003" clover="3.2.0">
-  <project timestamp="1552569255003" name="All files">
-    <metrics statements="266" coveredstatements="120" conditionals="109" coveredconditionals="0" methods="85" coveredmethods="3" elements="460" coveredelements="123" complexity="0" loc="266" ncloc="266" packages="25" files="52" classes="52"/>
+<coverage generated="1552570517228" clover="3.2.0">
+  <project timestamp="1552570517229" name="All files">
+    <metrics statements="267" coveredstatements="120" conditionals="109" coveredconditionals="0" methods="85" coveredmethods="3" elements="461" coveredelements="123" complexity="0" loc="267" ncloc="267" packages="25" files="52" classes="52"/>
     <package name="Theme">
       <metrics statements="40" coveredstatements="24" conditionals="14" coveredconditionals="0" methods="9" coveredmethods="1"/>
       <file name="Context.js" path="/Users/se/www/maintined/rkta-ui/src/Theme/Context.js">
@@ -95,14 +95,15 @@
       </file>
     </package>
     <package name="atoms.Bage">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="index.jsx" path="/Users/se/www/maintined/rkta-ui/src/atoms/Bage/index.jsx">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
       </file>
       <file name="style.js" path="/Users/se/www/maintined/rkta-ui/src/atoms/Bage/style.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
