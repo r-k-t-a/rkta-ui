@@ -19,8 +19,8 @@ export default css({
   },
   clip: { overflow: 'hidden' },
   disabled: {
-    pointerEvents: 'none',
     opacity: '0.4',
+    pointerEvents: 'none',
     userSelect: 'none',
   },
   hard: { borderRadius: '0' },
@@ -28,6 +28,10 @@ export default css({
   hardLeft: { borderBottomLeftRadius: '0', borderTopLeftRadius: '0' },
   hardTop: { borderTopLeftRadius: '0', borderTopRightRadius: '0' },
   hardRight: { borderBottomRightRadius: '0', borderTopRightRadius: '0' },
+  readOnly: {
+    pointerEvents: 'none',
+    userSelect: 'none',
+  },
   round: {
     ...roundCorners('50%'),
   },
