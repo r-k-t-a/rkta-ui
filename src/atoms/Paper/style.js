@@ -23,7 +23,7 @@ export default css({
     pointerEvents: 'none',
     userSelect: 'none',
   },
-  hard: { borderRadius: '0' },
+  hard: { ...roundCorners('0') },
   hardBottom: { borderBottomLeftRadius: '0', borderBottomRightRadius: '0' },
   hardLeft: { borderBottomLeftRadius: '0', borderTopLeftRadius: '0' },
   hardTop: { borderTopLeftRadius: '0', borderTopRightRadius: '0' },
