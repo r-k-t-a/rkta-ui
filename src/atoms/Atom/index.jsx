@@ -1,6 +1,6 @@
-import React from 'react';
+/** @jsx jsx */
 import PropTypes from 'prop-types';
-import { styled } from 'styletron-react';
+import { jsx } from '@emotion/core';
 
 const Atom = ({
   css,
@@ -11,7 +11,7 @@ const Atom = ({
   changeTheme, // eslint-disable-line react/prop-types
   atomRef,
   ...rest
-}) => <Element {...rest} ref={atomRef} />;
+}) => <Element {...rest} css={css} ref={atomRef} />;
 
 Atom.propTypes = {
   atomRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({})]),
@@ -27,7 +27,4 @@ Atom.defaultProps = {
 
 export const RawAtom = Atom;
 
-const Styled = styled(Atom, ({ css }) => css);
-Styled.displayName = 'Atom';
-
-export default Styled;
+export default Atom;

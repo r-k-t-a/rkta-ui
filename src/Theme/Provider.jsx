@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Provider } from 'styletron-react';
+import { ThemeProvider } from 'emotion-theming';
 import merge from 'lodash/merge';
 
 import Context from './Context';
@@ -61,9 +61,9 @@ export default class UiProvider extends Component {
   render() {
     const { changeTheme } = this;
     const { theme } = this.state;
-    const { children, location, modifyElement, ...rest } = this.props;
+    const { children, location, modifyElement } = this.props;
     return (
-      <Provider {...rest}>
+      <ThemeProvider theme={theme}>
         <Context.Provider
           value={{
             getColor: this.getColor,
@@ -75,7 +75,7 @@ export default class UiProvider extends Component {
         >
           {children}
         </Context.Provider>
-      </Provider>
+      </ThemeProvider>
     );
   }
 }
