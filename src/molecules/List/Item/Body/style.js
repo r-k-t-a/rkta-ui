@@ -5,13 +5,19 @@ export default css({
     display: 'flex',
     flexDirection: 'column',
     flexGrow: 1,
-    padding: '12px 16px',
+    paddingTop: '12px',
+    paddingBottom: '12px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
   },
   center: {
     alignItems: 'center',
   },
   fitAll: {
-    padding: 0,
+    paddingTop: 0,
+    paddingLeft: 0,
+    paddingBottom: 0,
+    paddingRight: 0,
   },
   fitBottom: {
     paddingBottom: 0,
@@ -23,6 +29,9 @@ export default css({
     flexDirection: 'column-reverse',
   },
   small: {
-    padding: '4px 16px',
+    paddingTop: '4px',
+    paddingBottom: '4px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
   },
 });

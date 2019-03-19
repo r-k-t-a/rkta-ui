@@ -10,7 +10,10 @@ export default css({
   dotted: { borderStyle: 'dotted' },
   baseline: {
     margin: 0,
-    padding: 0,
+    paddingTop: 0,
+    paddingLeft: 0,
+    paddingBottom: 0,
+    paddingRight: 0,
   },
   inset: { marginLeft: '72px' },
   invisible: { visibility: 'hidden' },

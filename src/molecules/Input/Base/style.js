@@ -7,6 +7,9 @@ export default css({
     display: 'block',
     height: '48px',
     outline: 'none',
-    padding: 0,
+    paddingTop: 0,
+    paddingLeft: 0,
+    paddingBottom: 0,
+    paddingRight: 0,
   },
 });

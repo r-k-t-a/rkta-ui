@@ -6,6 +6,9 @@ export default css({
     display: 'flex',
     listStyleType: 'none',
     margin: 0,
-    padding: 0,
+    paddingTop: 0,
+    paddingLeft: 0,
+    paddingBottom: 0,
+    paddingRight: 0,
   },
 });

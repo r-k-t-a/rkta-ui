@@ -3,10 +3,16 @@ import css from '../../util/css';
 export default css({
   defaultStyle: {
     margin: 0,
-    padding: '8px 0',
+    paddingTop: '4px',
+    paddingBottom: '4px',
+    paddingLeft: 0,
+    paddingRight: 0,
   },
   fitAll: {
-    padding: 0,
+    paddingTop: 0,
+    paddingLeft: 0,
+    paddingBottom: 0,
+    paddingRight: 0,
   },
   fitBottom: {
     paddingBottom: 0,

@@ -22,7 +22,13 @@ class Button extends Component {
     const { css, round } = this.props;
     if (round) {
       const { width, height, minHeight, ...rest } = css;
-      return { ...rest, padding: 0 };
+      return {
+        ...rest,
+        paddingTop: 0,
+        paddingLeft: 0,
+        paddingBottom: 0,
+        paddingRight: 0,
+      };
     }
     return css;
   }
