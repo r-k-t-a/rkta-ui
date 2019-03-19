@@ -12,7 +12,10 @@ export default css({
     justifyContent: 'center',
     minHeight: '48px',
     outline: 'none',
-    padding: '0 16px',
+    paddingTop: 0,
+    paddingBottom: 0,
+    paddingLeft: '16px',
+    paddingRight: '16px',
   },
   autoHeight: {
     height: 'auto',
@@ -21,13 +24,19 @@ export default css({
     display: 'flex',
     width: '100%',
   },
-  fitAll: { padding: 0 },
+  fitAll: {
+    paddingBottom: 0,
+    paddingTop: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
   fitLeft: { paddingLeft: 0 },
   fitRight: { paddingRight: 0 },
   large: {
     height: '56px',
     minHeight: '56px',
-    padding: '0 32px',
+    paddingLeft: '32px',
+    paddingRight: '32px',
   },
   outline: {
     background: 'transparent',
@@ -37,7 +46,8 @@ export default css({
   small: {
     height: '32px',
     minHeight: '32px',
-    padding: '0 8px',
+    paddingLeft: '8px',
+    paddingRight: '8px',
   },
   vertical: {
     flexDirection: 'column',
