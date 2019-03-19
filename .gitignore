@@ -1,7 +1,6 @@
 
 .docz
 .coverage
-docz
 node_modules
 rkta-ui.code-workspace
 lib
