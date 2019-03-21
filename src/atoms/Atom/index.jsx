@@ -24,6 +24,7 @@ Atom.defaultProps = {
   css: null,
   element: 'div',
 };
+Atom.displayName = 'Atom';
 
 export const RawAtom = Atom;
 

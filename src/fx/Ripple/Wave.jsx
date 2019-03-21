@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { keyframes } from '@emotion/core';
 
 import Paper from '../../atoms/Paper';
 
+const wave = keyframes`
+  from {
+    transform: scale(0, 0);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+`;
+
 const defaultCss = {
-  animationName: {
-    from: { transform: 'scale(0, 0)' },
-    to: { transform: 'scale(1, 1)' },
-  },
-  animationDuration: '1.8s',
-  animationFillMode: 'forwards',
-  animationIterationCount: '1',
-  animationTimingFunction: 'cubic-bezier(0.075, 0.820, 0.165, 1.000)',
+  animation: `${wave} 1.8s cubic-bezier(0.075, 0.820, 0.165, 1.000) forwards 1`,
   display: 'block',
   opacity: 0.24,
   position: 'absolute',
