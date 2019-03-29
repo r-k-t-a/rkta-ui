@@ -1,0 +1,57 @@
+---
+name: Visible
+menu: Atoms
+---
+
+import { Playground, PropsTable } from 'docz';
+import { Atom, Visible } from '../../';
+
+# Visible
+```js
+import { Visible } from 'rkta-ui';
+```
+
+<PropsTable of={Visible} />
+
+With `Visible` you can conditionally render elements depending on media.
+
+**Important**  
+The component has side effect on server — sisnce we can not reliably reason about the
+screen size, we wrap elements into `div` container and style it. In the browser we're
+able to evaluate mediaqueries, so we render invisible elements as `null`.
+
+<Playground>
+  <h6>Mode:</h6>
+  <Visible phone>
+    <h2>Phone</h2>
+  </Visible>
+  <Visible tablet>
+    <h2>Tablet</h2>
+  </Visible>
+  <Visible laptop>
+    <h2>Laptop</h2>
+  </Visible>
+  <Visible desktop>
+    <h2>Desktop</h2>
+  </Visible>
+  <Visible jumbotron>
+    <h2>Jumbotron</h2>
+  </Visible>
+  <Visible atMostPhone>
+    <div>Visible on phones and above</div>
+  </Visible>
+  <Visible atMostTablet>
+    <div>Visible on tablets and above</div>
+  </Visible>
+  <Visible atMostLaptop>
+    <div>Visible on laptops and above</div>
+  </Visible>
+  <Visible desktop>
+    <div>Visible only on desktops</div>
+  </Visible>
+  <Visible laptop tablet>
+    <div>Visible on laptops and tablets</div>
+  </Visible>
+</Playground>
+
+Read about mediaqueries [here](/util-create-media-queries).

@@ -16,11 +16,14 @@ import Spinner from '../molecules/Spinner/style';
 import Tabs from '../molecules/Tabs/Tabs.style';
 
 import Ripple from '../fx/Ripple/style';
+import createMediaQueries from '../util/createMediaQueries';
 
 import * as colors from './color';
 
 export default {
   colors,
+  mediaQueries: createMediaQueries(),
+
   Addon,
   Bage,
   Divider,

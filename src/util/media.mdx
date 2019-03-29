@@ -1,0 +1,54 @@
+---
+name: Media Utility
+menu: Responsiveness
+---
+
+import { Playground } from 'docz';
+import Atom from '../atoms/Atom';
+import media from './media';
+
+# Media Utility
+`media` utility helps you to write responsive css.
+
+```js
+import { media } from 'rkta-ui';
+```
+
+<Playground>
+  <Atom css={media({ display: 'none', phone: { display: 'block' } })}>
+    <Atom css={{ outline: '1px dotted' }}>
+      Visible on phones
+    </Atom>
+  </Atom>
+  <Atom css={media({ atMostTablet: { display: 'flex' } })}>
+    <Atom css={{ flexBasis: '50%', outline: '1px dotted' }}>
+      Left Colum
+    </Atom>
+    <Atom css={media({ flexBasis: '50%', outline: '1px dotted', desktop: { background: '#cfe' } })}>
+      Right Colum
+    </Atom>
+  </Atom>
+</Playground>
+
+## Use with Emotion
+```js
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
+import { media } from 'rkta-ui';
+
+const someStyle = css`
+  display: none;
+  ${media({
+    phone: { display: 'block '},
+  })}
+`;
+
+const Box = styled.div`
+  display: none;
+  ${media({
+    phone: { display: 'block '},
+  })}
+`;
+```
+
+Read about media queries [here](/util-create-media-queries).

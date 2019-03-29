@@ -1,0 +1,42 @@
+---
+name: Mediaqueries
+menu: Responsiveness
+---
+
+import { Playground } from 'docz';
+import { Atom } from '../';
+
+# Breakpoints
+```js
+import { createMediaQueries } from 'rkta-ui';
+
+const customTheme = {
+  mediaQueries: createMediaQueries([{ brekpointName: SIZE:int }]),
+}
+```
+
+## Named breakpoints
+We got same breakpoints like they have in material UI but we name them differently:
+
+**phone** *0*  
+**tablet** *600*  
+**laptop** *960*  
+**desktop** *1280*  
+**jumbotron** *1920*  
+
+## Mediaqueries
+5 breakpoints are used to generate 13 named media queries:
+
+**atLeastDesktop** — *all and (max-width: 1919px)*  
+**atLeastLaptop** — *all and (max-width: 1279px)*  
+**atLeastPhone** — *all and (max-width: 599px)*  
+**atLeastTablet** — *all and (max-width: 959px)*  
+**atMostDesktop** — *all and (min-width: 1280px)*  
+**atMostJumbotron** — *all and (min-width: 1920px)*  
+**atMostLaptop** — *all and (min-width: 960px)*  
+**atMostTablet** — *all and (min-width: 600px)*  
+**desktop** — *all and (min-width: 1280px) and (max-width: 1919px)*  
+**jumbotron** — *all and (min-width: 1920px)*  
+**laptop** — *all and (min-width: 960px) and (max-width: 1279px)*  
+**phone** — *all and (max-width: 599px)*  
+**tablet** — *all and (min-width: 600px) and (max-width: 959px)*  

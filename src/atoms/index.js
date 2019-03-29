@@ -6,3 +6,4 @@ export Font from './Font';
 export Header from './Header';
 export Paper from './Paper';
 export Svg from './Svg';
+export Visible from './Visible';
