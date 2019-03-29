@@ -64,6 +64,7 @@ Visible.propTypes = {
 Visible.defaultProps = {
   element: 'div',
 };
+Visible.displayName = 'Visible';
 Visible.contextType = Context;
 
 export default Visible;
