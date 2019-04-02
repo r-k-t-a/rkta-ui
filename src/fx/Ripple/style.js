@@ -8,6 +8,7 @@ export default css({
     transition: 'opacity 0.48s ease',
     userSelect: 'none',
     width: '100%',
+    willChange: 'opacity',
   },
   highlight: {
     opacity: 0.16,

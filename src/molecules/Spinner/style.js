@@ -25,8 +25,9 @@ export const getSegmentStyle = (borderWidth, size, color) => ({
   borderStyle: 'solid',
   borderRadius: '50%',
   boxSizing: 'border-box',
-  width: size,
   height: size,
+  width: size,
+  willChange: 'transform',
 });
 
 export default css({

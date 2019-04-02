@@ -22,6 +22,7 @@ const InputOutline = ({ children, css, labelIsActive, labelWidth, ...rest }) => 
         transform: 'scaleX(0)',
         transition: 'width 0.16s ease',
         width: `${labelIsActive ? labelWidth + 8 : 0}px`,
+        willChange: 'width',
       }}
     />
     {children}

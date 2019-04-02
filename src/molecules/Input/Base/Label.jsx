@@ -23,6 +23,7 @@ class Label extends Component {
             transform .24s ease
           `,
           transform: active && outlined ? 'translateY(-10px)' : '',
+          willChange: 'font-size, line-height, transform',
         }}
         atomRef={this.ref}
       >

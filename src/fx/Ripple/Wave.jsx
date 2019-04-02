@@ -19,6 +19,7 @@ const defaultCss = {
   opacity: 0.24,
   position: 'absolute',
   transition: 'opacity 0.4s ease',
+  willChange: 'opacity, transform',
 };
 
 const getStyle = (released, css) => {
