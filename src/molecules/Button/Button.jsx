@@ -1,12 +1,12 @@
 import React, { Children, Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 
-import Paper from '../../atoms/Paper';
-
-import Ripple from '../../fx/Ripple';
-import Spinner from '../Spinner';
-
+import Context from '../../Theme/Context';
 import withStyle from '../../Theme/withStyle';
+import Paper from '../../atoms/Paper';
+import Ripple from '../../fx/Ripple/Ripple';
+
+import Spinner from '../Spinner';
 import wrapChild from './wrapChild';
 
 class Button extends Component {
@@ -45,7 +45,9 @@ class Button extends Component {
     const { current } = this.rippleRef;
     if (current) current.setFocus(event, this.contentRef);
   };
-  handleMouseEnter = () => this.setState({ hasHighlight: true });
+  handleMouseEnter = () => {
+    this.setState({ hasHighlight: !this.context.touchDetected });
+  };
   handleMouseLeave = () => this.setState({ hasHighlight: false });
   handleDown = event => {
     const { current } = this.rippleRef;
@@ -117,6 +119,7 @@ class Button extends Component {
 }
 
 Button.displayName = 'Button';
+Button.contextType = Context;
 Button.propTypes = {
   /** height: auto */
   autoHeight: PropTypes.bool,

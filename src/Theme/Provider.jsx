@@ -42,8 +42,24 @@ export default class UiProvider extends Component {
   };
 
   state = {
+    touchDetected: false,
     theme: modifyTheme(this.props.theme),
   };
+
+  componentDidMount() {
+    window.addEventListener('touchstart', this.trackTouch);
+  }
+
+  componentWillUnmount() {
+    this.untrackTouch();
+  }
+
+  trackTouch = () => {
+    this.setState({ touchDetected: true });
+    this.untrackTouch();
+  };
+
+  untrackTouch = () => window.removeEventListener('touchstart', this.trackTouch);
 
   changeTheme = (...args) => {
     const nextTheme = this.props.changeTheme(...args);
@@ -60,7 +76,7 @@ export default class UiProvider extends Component {
 
   render() {
     const { changeTheme } = this;
-    const { theme } = this.state;
+    const { touchDetected, theme } = this.state;
     const { children, location, modifyElement } = this.props;
     return (
       <ThemeProvider theme={theme}>
@@ -69,6 +85,7 @@ export default class UiProvider extends Component {
             getColor: this.getColor,
             location: isServer ? location : getLocation(),
             changeTheme,
+            touchDetected,
             modifyElement,
             theme,
           }}
