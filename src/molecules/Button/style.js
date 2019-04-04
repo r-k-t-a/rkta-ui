@@ -16,7 +16,8 @@ export default css({
     paddingBottom: 0,
     paddingLeft: '16px',
     paddingRight: '16px',
-    '-webkit-tap-highlight-color': 'transparent',
+    WebkitTapHighlightColor: 'transparent',
+    tapHighlightColor: 'transparent',
     userSelect: 'none',
   },
   autoHeight: {

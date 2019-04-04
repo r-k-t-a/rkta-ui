@@ -14,7 +14,6 @@ const Svg = ({ children, color, css, getColor, size, ...rest }) => (
       width: `${size}px`,
       ...css,
     }}
-    viewBox="0 0 20 20"
   >
     {children}
   </Atom>
@@ -26,10 +25,12 @@ Svg.propTypes = {
   css: PropTypes.shape().isRequired,
   getColor: PropTypes.func.isRequired,
   size: PropTypes.number,
+  viewBox: PropTypes.string,
 };
 Svg.defaultProps = {
   color: null,
   size: 24,
+  viewBox: '0 0 20 20',
 };
 Svg.displayName = 'Svg';
 
