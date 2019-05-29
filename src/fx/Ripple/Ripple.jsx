@@ -23,6 +23,16 @@ class Ripple extends Component {
     waves: [],
   };
 
+  componentDidUpdate() {
+    window.addEventListener('mouseup', this.release);
+    window.addEventListener('pointercancel', this.release);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('mouseup', this.release);
+    window.removeEventListener('pointercancel', this.release);
+  }
+
   get backgroundColor() {
     const { color, getColor } = this.props;
     return getColor(color);
