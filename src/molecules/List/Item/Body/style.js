@@ -31,7 +31,5 @@ export default css({
   small: {
     paddingTop: '4px',
     paddingBottom: '4px',
-    paddingLeft: '16px',
-    paddingRight: '16px',
   },
 });
