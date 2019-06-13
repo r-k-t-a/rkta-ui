@@ -32,6 +32,7 @@ class Button extends Component {
     }
     return css;
   }
+
   get content() {
     const { busy, children } = this.props;
     return Children.map(children, wrapChild(busy));
@@ -41,19 +42,24 @@ class Button extends Component {
     const { current } = this.rippleRef;
     if (current) current.removeFocus();
   };
+
   handleFocus = event => {
     const { current } = this.rippleRef;
     if (current) current.setFocus(event, this.contentRef);
   };
+
   handleMouseEnter = () => {
     this.setState({ hasHighlight: !this.context.touchDetected });
   };
+
   handleMouseLeave = () => this.setState({ hasHighlight: false });
+
   handleDown = event => {
     const { current } = this.rippleRef;
     if (current) current.pushEvent(event);
     this.props.onPointerDown(event);
   };
+
   handleUp = event => {
     const { current } = this.rippleRef;
     if (current) current.release(event);
