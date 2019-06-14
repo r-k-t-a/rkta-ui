@@ -5,3 +5,5 @@ export * from './molecules';
 
 export media from './util/media';
 export createMediaQueries from './util/createMediaQueries';
+
+export useControlledDropdown from './atoms/Dropdown/useControlledDropdown';
