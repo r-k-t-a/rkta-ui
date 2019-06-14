@@ -32,8 +32,3 @@
         specialLink:
           - hrefLeft
           - hrefRight
-
-  settings:
-    import/resolver:
-      webpack:
-        config: 'lib/webpack/config.common.js'
