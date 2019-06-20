@@ -6,5 +6,6 @@ export Dropdown from './Dropdown';
 export Font from './Font';
 export Header from './Header';
 export Paper from './Paper';
+export ScrollBox from './ScrollBox';
 export Svg from './Svg';
 export Visible from './Visible';
