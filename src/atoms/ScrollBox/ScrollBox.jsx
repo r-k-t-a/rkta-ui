@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Atom } from '../../atoms';
+import Atom from '../Atom';
 import media from '../../util/media';
 
 const getBoxCss = (css, x, y) =>
@@ -19,6 +19,7 @@ const getBoxCss = (css, x, y) =>
 
 const ScrollBox = ({ css, x, y, ...rest }) => <Atom {...rest} css={getBoxCss(css, x, y)} />;
 
+ScrollBox.displayName = 'ScrollBox';
 ScrollBox.propTypes = {
   children: PropTypes.node.isRequired,
   css: PropTypes.shape(),
