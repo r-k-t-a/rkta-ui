@@ -1,48 +1,34 @@
-import React, { Fragment, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import Atom from '../../atoms/Atom';
+import { Atom } from '../../atoms';
 import media from '../../util/media';
 
-import DefaultIndicator from './Indicator';
-import useIndicators from './useIndicators';
-
-const getBoxCss = (vertical, css) =>
+const getBoxCss = (css, x, y) =>
   media({
     ...css,
     overflow: 'hidden',
-    overflowY: vertical ? 'scroll' : undefined,
-    overflowX: vertical ? undefined : 'scroll',
+    overflowY: y ? 'scroll' : undefined,
+    overflowX: x ? 'scroll' : undefined,
     overflowScrolling: 'touch',
     position: 'relative',
     scrollBehavior: 'smooth',
+    scrollSnapType: 'both mandatory',
     WebkitOverflowScrolling: 'touch',
   });
 
-const ScrollBox = ({ children, css, Indicator, vertical, ...rest }) => {
-  const [ref, setRef] = useState();
-  const [prev, next] = useIndicators(ref, vertical);
-  return (
-    <Fragment>
-      <Atom {...rest} css={getBoxCss(vertical, css)} atomRef={setRef}>
-        {children}
-      </Atom>
-      {prev && <Indicator {...prev} />}
-      {next && <Indicator {...next} />}
-    </Fragment>
-  );
-};
+const ScrollBox = ({ css, x, y, ...rest }) => <Atom {...rest} css={getBoxCss(css, x, y)} />;
 
 ScrollBox.propTypes = {
   children: PropTypes.node.isRequired,
-  Indicator: PropTypes.elementType,
-  vertical: PropTypes.bool,
   css: PropTypes.shape(),
+  x: PropTypes.bool,
+  y: PropTypes.bool,
 };
 ScrollBox.defaultProps = {
   css: null,
-  Indicator: DefaultIndicator,
-  vertical: false,
+  x: false,
+  y: false,
 };
 
 export default ScrollBox;
