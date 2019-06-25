@@ -19,11 +19,17 @@ export default css({
     paddingBottom: 0,
     paddingRight: 0,
   },
+  fitLeft: {
+    paddingLeft: 0,
+  },
   fitBottom: {
     paddingBottom: 0,
   },
   fitTop: {
     paddingTop: 0,
+  },
+  fitRight: {
+    paddingRight: 0,
   },
   reverse: {
     flexDirection: 'column-reverse',
