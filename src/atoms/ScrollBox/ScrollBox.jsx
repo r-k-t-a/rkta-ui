@@ -20,15 +20,9 @@ const getBoxCss = (css, x, y, interactive, needScroll) => {
 };
 
 const ScrollBox = ({ css, x, y, interactive, ...rest }) => {
-  const [needScroll, setNeedSCroll] = useState(false);
-  function handleStart() {
-    if (needScroll) return;
-    setNeedSCroll(true);
-  }
-  function handleEnd() {
-    if (!needScroll) return;
-    setNeedSCroll(false);
-  }
+  const [needScroll, setNeedScroll] = useState(false);
+  const handleStart = () => !needScroll && setNeedScroll(true);
+  const handleEnd = () => needScroll && setNeedScroll(false);
   return (
     <Atom
       {...rest}
