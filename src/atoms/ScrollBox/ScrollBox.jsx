@@ -23,6 +23,10 @@ const ScrollBox = ({ css, x, y, interactive, ...rest }) => {
   const [needScroll, setNeedScroll] = useState(false);
   const handleStart = () => !needScroll && setNeedScroll(true);
   const handleEnd = () => needScroll && setNeedScroll(false);
+  const handleScroll = event => {
+    handleStart();
+    if (rest.onScroll) rest.onScroll(event);
+  };
   return (
     <Atom
       {...rest}
@@ -30,7 +34,7 @@ const ScrollBox = ({ css, x, y, interactive, ...rest }) => {
       onMouseOver={handleStart}
       onFocus={handleStart}
       onTouchStart={handleStart}
-      onScroll={handleStart}
+      onScroll={handleScroll}
       onMouseLeave={handleEnd}
       onBlur={handleEnd}
       onTouchEnd={handleEnd}
@@ -43,12 +47,14 @@ ScrollBox.propTypes = {
   children: PropTypes.node.isRequired,
   css: PropTypes.shape(),
   interactive: PropTypes.bool,
+  onScroll: PropTypes.func,
   x: PropTypes.bool,
   y: PropTypes.bool,
 };
 ScrollBox.defaultProps = {
   css: null,
   interactive: false,
+  onScroll: undefined,
   x: false,
   y: false,
 };
