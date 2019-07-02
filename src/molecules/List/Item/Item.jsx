@@ -31,7 +31,7 @@ const ListItem = ({
 ListItem.displayName = 'ListItem';
 ListItem.propTypes = {
   BaseElement: PropTypes.oneOfType([
-    PropTypes.element,
+    PropTypes.elementType,
     PropTypes.shape({ render: PropTypes.func.isRequired }),
   ]),
   center: PropTypes.bool,
