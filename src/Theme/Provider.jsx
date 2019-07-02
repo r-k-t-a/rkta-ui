@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'emotion-theming';
 import merge from 'lodash/merge';
 
+import contextTypes from './contextTypes';
 import defaultTheme from './defaultTheme';
 import isServer from '../util/isServer';
 import mapColors from '../util/mapColors';
@@ -40,15 +41,7 @@ export default class UiProvider extends Component {
     theme: {},
   };
 
-  static childContextTypes = {
-    getColor: PropTypes.func,
-    changeTheme: PropTypes.func,
-    location: PropTypes.string,
-    modifyElement: PropTypes.func,
-    providerIsMissing: PropTypes.bool,
-    theme: PropTypes.shape(),
-    touchDetected: PropTypes.bool,
-  };
+  static childContextTypes = contextTypes;
 
   state = {
     touchDetected: false,
