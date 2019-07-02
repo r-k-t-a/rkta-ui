@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import contextTypes from './contextTypes';
 import defaultRenderrer from './defaultRenderrer';
 import invariant from '../util/invariant';
