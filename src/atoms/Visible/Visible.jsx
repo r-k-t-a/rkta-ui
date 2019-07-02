@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Context from '../../Theme/Context';
+import contextTypes from '../../Theme/contextTypes';
 import Atom from '../Atom';
 
 import match from '../../util/matchMedia';
@@ -65,6 +65,6 @@ Visible.defaultProps = {
   element: 'div',
 };
 Visible.displayName = 'Visible';
-Visible.contextType = Context;
+Visible.contextTypes = contextTypes;
 
 export default Visible;
