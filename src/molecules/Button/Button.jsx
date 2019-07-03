@@ -1,7 +1,7 @@
 import React, { Children, Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 
-import contextTypes from '../../Theme/contextTypes';
+import Context from '../../Theme/Context';
 import withStyle from '../../Theme/withStyle';
 import Paper from '../../atoms/Paper';
 import Ripple from '../../fx/Ripple/Ripple';
@@ -114,7 +114,7 @@ class Button extends Component {
             color={color}
             highlight={hasHighlight}
             focus={hasFocus}
-            forwardRef={this.rippleRef}
+            ref={this.rippleRef}
           />
         )}
         {this.content}
@@ -125,7 +125,7 @@ class Button extends Component {
 }
 
 Button.displayName = 'Button';
-Button.contextTypes = contextTypes;
+Button.contextType = Context;
 
 Button.propTypes = {
   /** height: auto */

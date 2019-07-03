@@ -1,4 +1,6 @@
-import contextTypes from './contextTypes';
+import React, { forwardRef } from 'react';
+
+import Context from './Context';
 import defaultRenderrer from './defaultRenderrer';
 import invariant from '../util/invariant';
 
@@ -27,13 +29,16 @@ const pickProps = (context, props, elementName, ref) => {
 
 const withStyle = (Element, key) => {
   const { displayName } = Element;
-  const WithStyle = ({ forwardRef, ...props }, parentContext) => {
-    const { modifyElement, providerIsMissing, ...context } = parentContext;
-    invariant(!providerIsMissing, 'Please use the Provider');
-    const render = modifyElement || defaultRenderrer;
-    return render(Element, pickProps(context, props, key || displayName, forwardRef));
-  };
-  WithStyle.contextTypes = contextTypes;
+  const WithStyle = forwardRef((props, ref) => (
+    <Context.Consumer>
+      {({ modifyElement, providerIsMissing, ...context }) => {
+        invariant(!providerIsMissing, 'Please use the Provider');
+        const render = modifyElement || defaultRenderrer;
+        return render(Element, pickProps(context, props, key || displayName, ref));
+      }}
+    </Context.Consumer>
+  ));
+  WithStyle.contextType = Context;
   WithStyle.displayName = displayName;
   Element.displayName = `Styled ${displayName}`; // eslint-disable-line no-param-reassign
   return WithStyle;
