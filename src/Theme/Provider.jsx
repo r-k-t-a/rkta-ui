@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'emotion-theming';
 import merge from 'lodash/merge';
 
-import contextTypes from './contextTypes';
+import Context from './Context';
 import defaultTheme from './defaultTheme';
 import isServer from '../util/isServer';
 import mapColors from '../util/mapColors';
@@ -41,23 +41,10 @@ export default class UiProvider extends Component {
     theme: {},
   };
 
-  static childContextTypes = contextTypes;
-
   state = {
     touchDetected: false,
     theme: modifyTheme(this.props.theme),
   };
-
-  getChildContext() {
-    return {
-      getColor: this.getColor,
-      changeTheme: this.changeTheme,
-      location: isServer ? this.props.location : getLocation(),
-      modifyElement: this.props.modifyElement,
-      theme: this.state.theme,
-      touchDetected: this.state.touchDetected,
-    };
-  }
 
   componentDidMount() {
     window.addEventListener('touchstart', this.trackTouch);
@@ -88,6 +75,24 @@ export default class UiProvider extends Component {
   };
 
   render() {
-    return <ThemeProvider theme={this.state.theme}>{this.props.children}</ThemeProvider>;
+    const { changeTheme } = this;
+    const { touchDetected, theme } = this.state;
+    const { children, location, modifyElement } = this.props;
+    return (
+      <ThemeProvider theme={theme}>
+        <Context.Provider
+          value={{
+            getColor: this.getColor,
+            location: isServer ? location : getLocation(),
+            changeTheme,
+            touchDetected,
+            modifyElement,
+            theme,
+          }}
+        >
+          {children}
+        </Context.Provider>
+      </ThemeProvider>
+    );
   }
 }
