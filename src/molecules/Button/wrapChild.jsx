@@ -10,7 +10,7 @@ export default busy => child => {
         zIndex: 1,
       };
   return isValidElement(child) ? (
-    cloneElement(child, { css: { ...child.css, ...css } })
+    cloneElement(child, { css: { ...child.props.css, ...css } })
   ) : (
     <Atom element="span" css={css}>
       {child}
