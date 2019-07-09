@@ -39,12 +39,11 @@ class Visible extends Component {
   }
 
   get serverContent() {
-    const { children, element, ssr } = this.props;
-    // if (ssr === false) return null;
+    const { children, element } = this.props;
     const mq = `@media ${mediaToString(this.serverQueries)}`;
     return (
       <Atom css={{ [mq]: { display: 'none' } }} element={element}>
-        {children} {ssr.toString()}
+        {children}
       </Atom>
     );
   }
@@ -60,12 +59,10 @@ class Visible extends Component {
 
 Visible.propTypes = {
   children: PropTypes.node.isRequired,
-  ssr: PropTypes.bool,
   element: PropTypes.string,
 };
 Visible.defaultProps = {
   element: 'div',
-  ssr: true,
 };
 Visible.displayName = 'Visible';
 Visible.contextType = Context;
