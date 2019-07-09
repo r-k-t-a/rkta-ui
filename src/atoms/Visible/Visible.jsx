@@ -39,7 +39,8 @@ class Visible extends Component {
   }
 
   get serverContent() {
-    const { children, element } = this.props;
+    const { children, element, ssr } = this.props;
+    if (!ssr) return false;
     const mq = `@media ${mediaToString(this.serverQueries)}`;
     return (
       <Atom css={{ [mq]: { display: 'none' } }} element={element}>
@@ -53,7 +54,6 @@ class Visible extends Component {
   };
 
   render() {
-    if (!this.props.ssr && !this.isMounted) return false;
     return this.isMounted ? this.clientContent : this.serverContent;
   }
 }
