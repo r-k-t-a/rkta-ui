@@ -40,11 +40,11 @@ class Visible extends Component {
 
   get serverContent() {
     const { children, element, ssr } = this.props;
-    if (ssr === false) return null;
+    // if (ssr === false) return null;
     const mq = `@media ${mediaToString(this.serverQueries)}`;
     return (
       <Atom css={{ [mq]: { display: 'none' } }} element={element}>
-        {children}
+        {children} {ssr.toString()}
       </Atom>
     );
   }
