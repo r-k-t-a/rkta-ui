@@ -53,16 +53,19 @@ class Visible extends Component {
   };
 
   render() {
+    if (!(this.props.ssr && this.isMounted)) return false;
     return this.isMounted ? this.clientContent : this.serverContent;
   }
 }
 
 Visible.propTypes = {
   children: PropTypes.node.isRequired,
+  ssr: PropTypes.bool,
   element: PropTypes.string,
 };
 Visible.defaultProps = {
   element: 'div',
+  ssr: true,
 };
 Visible.displayName = 'Visible';
 Visible.contextType = Context;
