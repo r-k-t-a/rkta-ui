@@ -53,7 +53,7 @@ class Visible extends Component {
   };
 
   render() {
-    return typeof matchMedia === 'function' ? this.clientContent : this.serverContent;
+    return this.isMounted ? this.clientContent : this.serverContent;
   }
 }
 
