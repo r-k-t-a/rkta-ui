@@ -53,7 +53,7 @@ class Visible extends Component {
   };
 
   render() {
-    if (!(this.props.ssr && this.isMounted)) return false;
+    if (!this.props.ssr && !this.isMounted) return false;
     return this.isMounted ? this.clientContent : this.serverContent;
   }
 }

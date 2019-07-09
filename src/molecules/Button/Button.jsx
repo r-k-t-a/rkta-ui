@@ -68,7 +68,6 @@ class Button extends Component {
 
   render() {
     const {
-      ariaLabel,
       autoHeight,
       blockLevel,
       busy,
@@ -94,7 +93,6 @@ class Button extends Component {
     const { hasFocus, hasHighlight } = this.state;
     return (
       <Paper
-        aria-label={ariaLabel}
         button
         element={element}
         tabIndex={0}
@@ -130,7 +128,6 @@ Button.displayName = 'Button';
 Button.contextType = Context;
 
 Button.propTypes = {
-  ariaLabel: PropTypes.string.isRequired,
   /** height: auto */
   autoHeight: PropTypes.bool,
   /** display: block */
