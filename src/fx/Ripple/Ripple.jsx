@@ -119,7 +119,7 @@ class Ripple extends Component {
 
   render() {
     const { outline, waves } = this.state;
-    if (!outline && !waves.length) return null;
+    if (!this.props.forceShow && !outline && !waves.length) return null;
     return (
       <Atom
         element="span"
@@ -155,9 +155,11 @@ Ripple.propTypes = {
   color: PropTypes.string,
   getColor: PropTypes.func.isRequired,
   css: PropTypes.shape().isRequired,
+  forceShow: PropTypes.bool,
 };
 Ripple.defaultProps = {
   color: null,
+  forceShow: false,
 };
 
 export default withStyle(Ripple);
