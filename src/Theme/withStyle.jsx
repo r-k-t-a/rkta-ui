@@ -7,18 +7,30 @@ import invariant from '../util/invariant';
 
 const modifyStyles = memoize((context, { children, ...props }, element, ref) => {
   const { defaultStyle, ...styles } = context.theme[element];
-  const { nextStyle, nextProps } = Object.keys(props).reduce(
-    (acc, key) => {
-      const value = props[key];
-      if (value === true && key in styles) Object.assign(acc.nextStyle, styles[key]);
-      else if (!(key in styles)) Object.assign(acc.nextProps, { [key]: value });
-      return acc;
-    },
-    {
-      nextProps: {},
-      nextStyle: { ...defaultStyle },
-    },
-  );
+
+  const nextProps = {};
+  const nextStyle = defaultStyle;
+
+  const keys = Object.keys(props);
+
+  for (let i; i < keys.length; i += 1) {
+    const value = props[i];
+    if (value === true && i in styles) Object.assign({}, nextStyle, styles[i]);
+    else if (!(i in styles)) nextProps[i] = value;
+  }
+
+  // const { nextStyle, nextProps } = Object.keys(props).reduce(
+  //   (acc, key) => {
+  //     const value = props[key];
+  //     if (value === true && key in styles) Object.assign(acc.nextStyle, styles[key]);
+  //     else if (!(key in styles)) Object.assign(acc.nextProps, { [key]: value });
+  //     return acc;
+  //   },
+  //   {
+  //     nextProps: {},
+  //     nextStyle: { ...defaultStyle },
+  //   },
+  // );
   const css = { ...nextStyle, ...props.css };
   return { ...nextProps, ...context, children, css, ref };
 });
