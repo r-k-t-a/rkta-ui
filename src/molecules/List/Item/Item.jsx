@@ -7,9 +7,7 @@ import withStyle from '../../../Theme/withStyle';
 import Body from './Body';
 
 const ListItem = ({
-  autoHeight,
   BaseElement,
-  blockLevel,
   center,
   children,
   css,
@@ -17,37 +15,29 @@ const ListItem = ({
   href,
   reverse,
   small,
-  textLeft,
   ...props
-}) => (
-  <BaseElement
-    autoHeight={autoHeight}
-    blockLevel={blockLevel}
-    css={css}
-    hard
-    href={href}
-    element={element}
-    textLeft={textLeft}
-    {...props}
-  >
-    {Children.count(children) === 1 ? (
-      <Body center={center} reverse={reverse} small={small} {...props}>
-        {children}
-      </Body>
-    ) : (
-      children
-    )}
-  </BaseElement>
-);
+}) => {
+  // eslint-disable-next-line react/prop-types
+  const { autoHeight, blockLevel, textLeft, ...bodyProps } = props;
+  return (
+    <BaseElement css={css} hard href={href} element={element} {...props}>
+      {Children.count(children) === 1 ? (
+        <Body center={center} reverse={reverse} small={small} {...bodyProps}>
+          {children}
+        </Body>
+      ) : (
+        children
+      )}
+    </BaseElement>
+  );
+};
 
 ListItem.displayName = 'ListItem';
 ListItem.propTypes = {
-  autoHeight: PropTypes.bool,
   BaseElement: PropTypes.oneOfType([
     PropTypes.elementType,
     PropTypes.shape({ render: PropTypes.func.isRequired }),
   ]),
-  blockLevel: PropTypes.bool,
   center: PropTypes.bool,
   children: PropTypes.node.isRequired,
   css: PropTypes.shape().isRequired,
@@ -55,18 +45,14 @@ ListItem.propTypes = {
   element: PropTypes.string,
   reverse: PropTypes.bool,
   small: PropTypes.bool,
-  textLeft: PropTypes.bool,
 };
 ListItem.defaultProps = {
-  autoHeight: undefined,
   BaseElement: Paper,
-  blockLevel: undefined,
   center: false,
   element: undefined,
   href: null,
   reverse: false,
   small: false,
-  textLeft: undefined,
 };
 
 export default withStyle(ListItem);
