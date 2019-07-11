@@ -6,8 +6,18 @@ import withStyle from '../../../Theme/withStyle';
 
 import Body from './Body';
 
-const ListItem = ({ BaseElement, center, children, css, element, reverse, small, ...props }) => (
-  <BaseElement hard css={css} element={element} {...props}>
+const ListItem = ({
+  BaseElement,
+  center,
+  children,
+  css,
+  element,
+  href,
+  reverse,
+  small,
+  ...props
+}) => (
+  <BaseElement css={css} hard href={href} element={element} {...props}>
     {Children.count(children) === 1 ? (
       <Body center={center} reverse={reverse} small={small} {...props}>
         {children}
@@ -27,6 +37,7 @@ ListItem.propTypes = {
   center: PropTypes.bool,
   children: PropTypes.node.isRequired,
   css: PropTypes.shape().isRequired,
+  href: PropTypes.string,
   element: PropTypes.string,
   reverse: PropTypes.bool,
   small: PropTypes.bool,
@@ -35,6 +46,7 @@ ListItem.defaultProps = {
   BaseElement: Paper,
   center: false,
   element: undefined,
+  href: null,
   reverse: false,
   small: false,
 };
