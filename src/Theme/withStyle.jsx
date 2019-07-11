@@ -1,10 +1,11 @@
 import React, { forwardRef } from 'react';
+import memoize from 'lodash/memoize';
 
 import Context from './Context';
 import defaultRenderrer from './defaultRenderrer';
 import invariant from '../util/invariant';
 
-const modifyStyles = (context, { children, ...props }, element, ref) => {
+const modifyStyles = memoize((context, { children, ...props }, element, ref) => {
   const { defaultStyle, ...styles } = context.theme[element];
   const { nextStyle, nextProps } = Object.keys(props).reduce(
     (acc, key) => {
@@ -20,7 +21,7 @@ const modifyStyles = (context, { children, ...props }, element, ref) => {
   );
   const css = { ...nextStyle, ...props.css };
   return { ...nextProps, ...context, children, css, ref };
-};
+});
 
 const pickProps = (context, props, elementName, ref) => {
   if (elementName in context.theme) return modifyStyles(context, props, elementName, ref);
