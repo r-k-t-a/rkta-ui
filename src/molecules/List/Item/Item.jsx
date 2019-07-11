@@ -7,7 +7,9 @@ import withStyle from '../../../Theme/withStyle';
 import Body from './Body';
 
 const ListItem = ({
+  autoHeight,
   BaseElement,
+  blockLevel,
   center,
   children,
   css,
@@ -15,9 +17,19 @@ const ListItem = ({
   href,
   reverse,
   small,
+  textLeft,
   ...props
 }) => (
-  <BaseElement css={css} hard href={href} element={element} {...props}>
+  <BaseElement
+    autoHeight={autoHeight}
+    blockLevel={blockLevel}
+    css={css}
+    hard
+    href={href}
+    element={element}
+    textLeft={textLeft}
+    {...props}
+  >
     {Children.count(children) === 1 ? (
       <Body center={center} reverse={reverse} small={small} {...props}>
         {children}
@@ -30,10 +42,12 @@ const ListItem = ({
 
 ListItem.displayName = 'ListItem';
 ListItem.propTypes = {
+  autoHeight: PropTypes.bool,
   BaseElement: PropTypes.oneOfType([
     PropTypes.elementType,
     PropTypes.shape({ render: PropTypes.func.isRequired }),
   ]),
+  blockLevel: PropTypes.bool,
   center: PropTypes.bool,
   children: PropTypes.node.isRequired,
   css: PropTypes.shape().isRequired,
@@ -41,14 +55,18 @@ ListItem.propTypes = {
   element: PropTypes.string,
   reverse: PropTypes.bool,
   small: PropTypes.bool,
+  textLeft: PropTypes.bool,
 };
 ListItem.defaultProps = {
+  autoHeight: null,
   BaseElement: Paper,
+  blockLevel: null,
   center: false,
   element: undefined,
   href: null,
   reverse: false,
   small: false,
+  textLeft: false,
 };
 
 export default withStyle(ListItem);
