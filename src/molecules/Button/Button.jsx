@@ -113,6 +113,7 @@ class Button extends Component {
             {...rest}
             color={color}
             highlight={hasHighlight}
+            forceShow={hasHighlight}
             focus={hasFocus}
             ref={this.rippleRef}
           />
