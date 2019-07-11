@@ -9,13 +9,11 @@ const modifyStyles = memoize((context, { children, ...props }, element, ref) => 
   const { defaultStyle, ...styles } = context.theme[element];
 
   const nextProps = {};
-  const nextStyle = defaultStyle;
+  const nextStyle = { ...defaultStyle };
 
-  const keys = Object.keys(props);
-
-  for (let i; i < keys.length; i += 1) {
+  for (let i; i < Object.keys(props); i += 1) {
     const value = props[i];
-    if (value === true && i in styles) Object.assign({}, nextStyle, styles[i]);
+    if (value === true && i in styles) Object.assign(nextStyle, styles[i]);
     else if (!(i in styles)) nextProps[i] = value;
   }
 
