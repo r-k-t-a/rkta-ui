@@ -58,15 +58,15 @@ ListItem.propTypes = {
   textLeft: PropTypes.bool,
 };
 ListItem.defaultProps = {
-  autoHeight: null,
+  autoHeight: undefined,
   BaseElement: Paper,
-  blockLevel: null,
+  blockLevel: undefined,
   center: false,
   element: undefined,
   href: null,
   reverse: false,
   small: false,
-  textLeft: false,
+  textLeft: undefined,
 };
 
 export default withStyle(ListItem);
