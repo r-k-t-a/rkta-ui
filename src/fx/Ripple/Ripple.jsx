@@ -118,6 +118,8 @@ class Ripple extends Component {
   }
 
   render() {
+    const { outline, waves } = this.state;
+    if (!outline && !waves.length) return null;
     return (
       <Atom
         element="span"
