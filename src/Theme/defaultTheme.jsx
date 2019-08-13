@@ -9,6 +9,7 @@ import Svg from '../atoms/Svg/style';
 import Button from '../molecules/Button/style';
 import InputBase from '../molecules/Input/Base/style';
 import InputOutline from '../molecules/Input/Outline/style';
+import LinearProgress from '../molecules/LinearProgress/style';
 import List from '../molecules/List/style';
 import ListItem from '../molecules/List/Item/style';
 import ListItemBody from '../molecules/List/Item/Body/style';
@@ -35,6 +36,7 @@ export default {
   Button,
   InputBase,
   InputOutline,
+  LinearProgress,
   List,
   ListItem,
   ListItemBody,
