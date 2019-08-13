@@ -1,19 +1,34 @@
+import { keyframes } from '@emotion/core';
 import css from '../../util/css';
 
-export const getProgressStyle = completed => ({
-  width: `${completed}%`,
-});
+const indeterminate = keyframes`
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(200%);
+  }
+`;
+
+export const getProgressStyle = progress =>
+  progress === null
+    ? {
+        animation: `${indeterminate} 1.6s cubic-bezier(0.6, 0.2, 0.4, 0.8) infinite`,
+        width: '50%',
+      }
+    : {
+        width: `${progress}%`,
+      };
 
 export default css({
   defaultStyle: {
-    height: '8px',
     position: 'relative',
-    '> :nth-of-type(1)': {
+    '> :first-child': {
       height: '100%',
       backgroundColor: 'currentColor',
       opacity: 0.3,
     },
-    '> :nth-of-type(2)': {
+    '> :last-child': {
       position: 'absolute',
       top: 0,
       left: 0,

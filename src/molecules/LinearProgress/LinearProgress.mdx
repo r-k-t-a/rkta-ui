@@ -5,7 +5,6 @@ menu: Molecules
 
 import { Playground, Props } from 'docz';
 import LinearProgress, { SimpleLinearProgress } from './LinearProgress';
-import LinearProgressHelper from './LinearProgressHelper';
 import { Atom } from '../../';
 
 # Linear Progress Bar
@@ -13,12 +12,12 @@ import { Atom } from '../../';
 ### Props
 <Props of={SimpleLinearProgress} />
 
-### Plain
+### Indeterminate
 <Playground>
-  <LinearProgress completed={33} color="success" />
+  <LinearProgress color="success" />
 </Playground>
 
-### Dynamic
+### Fixed progress
 <Playground>
-  <LinearProgressHelper color="warning" />
+  <LinearProgress progress={20} color="warning" height={4} />
 </Playground>
