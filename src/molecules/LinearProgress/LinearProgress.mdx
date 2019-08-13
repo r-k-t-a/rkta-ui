@@ -1,0 +1,23 @@
+---
+name: LinearProgress
+menu: Molecules
+---
+
+import { Playground, Props } from 'docz';
+import LinearProgress, { SimpleLinearProgress } from './LinearProgress';
+import { Atom } from '../../';
+
+# Linear Progress Bar
+
+### Props
+<Props of={SimpleLinearProgress} />
+
+### Indeterminate
+<Playground>
+  <LinearProgress color="success" />
+</Playground>
+
+### Fixed progress
+<Playground>
+  <LinearProgress progress={20} color="warning" height={4} />
+</Playground>
