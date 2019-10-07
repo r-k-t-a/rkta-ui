@@ -17,8 +17,7 @@ class Visible extends Component {
     window.addEventListener('resize', this.handleResize, { passive: true });
   }
 
-  // eslint-disable-next-line
-  componentWillUnMount() {
+  componentWillUnmount() {
     this.isMounted = false;
     window.removeEventListener('resize', this.handleResize, true);
   }
