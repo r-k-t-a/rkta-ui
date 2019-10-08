@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import Button from '../../Button';
 import { ListItem } from '../Item';
 
-const ListButton = props => (
-  <ListItem autoHeight BaseElement={Button} blockLevel textLeft {...props} />
-);
+const ListButton = forwardRef((props, ref) => (
+  <ListItem autoHeight BaseElement={Button} blockLevel textLeft atomRef={ref} {...props} />
+));
 
 ListButton.displayName = 'ListButton';
 
