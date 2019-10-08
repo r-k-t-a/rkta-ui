@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React, { Children, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 import Paper from '../../../atoms/Paper';
@@ -6,31 +6,23 @@ import withStyle from '../../../Theme/withStyle';
 
 import Body from './Body';
 
-const ListItem = ({
-  BaseElement,
-  center,
-  children,
-  css,
-  element,
-  href,
-  reverse,
-  small,
-  ...props
-}) => {
-  // eslint-disable-next-line react/prop-types
-  const { autoHeight, blockLevel, textLeft, ...bodyProps } = props;
-  return (
-    <BaseElement css={css} hard href={href} element={element} {...props}>
-      {Children.count(children) === 1 ? (
-        <Body center={center} reverse={reverse} small={small} {...bodyProps}>
-          {children}
-        </Body>
-      ) : (
-        children
-      )}
-    </BaseElement>
-  );
-};
+const ListItem = forwardRef(
+  ({ BaseElement, center, children, css, element, href, reverse, small, ...props }, ref) => {
+    // eslint-disable-next-line react/prop-types
+    const { autoHeight, blockLevel, textLeft, ...bodyProps } = props;
+    return (
+      <BaseElement css={css} hard href={href} element={element} atomRef={ref} {...props}>
+        {Children.count(children) === 1 ? (
+          <Body center={center} reverse={reverse} small={small} {...bodyProps}>
+            {children}
+          </Body>
+        ) : (
+          children
+        )}
+      </BaseElement>
+    );
+  },
+);
 
 ListItem.displayName = 'ListItem';
 ListItem.propTypes = {

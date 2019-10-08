@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 import Atom from '../Atom';
@@ -9,11 +9,11 @@ const getFontProps = (color, getColor, rest) => {
   return { ...rest, css: nextCss };
 };
 
-const Font = ({ children, getColor, color, ...rest }) => (
-  <Atom element="span" {...getFontProps(color, getColor, rest)}>
+const Font = forwardRef(({ children, getColor, color, ...rest }, ref) => (
+  <Atom element="span" atomRef={ref} {...getFontProps(color, getColor, rest)}>
     {children}
   </Atom>
-);
+));
 
 Font.displayName = 'Font';
 Font.propTypes = {

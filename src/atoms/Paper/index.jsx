@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 import Font from '../Font';
@@ -19,7 +19,7 @@ const modifyProps = ({ css, rize, size, theme, ...props }) => {
   return { element: 'div', ...props, css: { ...nextCss, ...css } };
 };
 
-const Paper = props => <Font {...modifyProps(props)} />;
+const Paper = forwardRef((props, ref) => <Font atomRef={ref} {...modifyProps(props)} />);
 
 Paper.displayName = 'Paper';
 Paper.propTypes = {
