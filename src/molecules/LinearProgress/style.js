@@ -23,12 +23,12 @@ export const getProgressStyle = progress =>
 export default css({
   defaultStyle: {
     position: 'relative',
-    '> :first-child': {
+    '> :first-of-type': {
       height: '100%',
       backgroundColor: 'currentColor',
       opacity: 0.3,
     },
-    '> :last-child': {
+    '> :last-of-type': {
       position: 'absolute',
       top: 0,
       left: 0,
