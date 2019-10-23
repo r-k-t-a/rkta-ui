@@ -89,6 +89,7 @@ class Ripple extends Component {
   removeFocus = () => this.setState({ outline: null });
 
   setFocus = (event, { current }) => {
+    if (!current) return;
     const { width: innerWidth, height: innerHeight } = current.getBoundingClientRect();
     const { width, height } = getBounds(event);
     const size = Math.max(innerHeight, innerWidth, 32);
