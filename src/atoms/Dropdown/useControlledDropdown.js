@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import useKey from 'react-use/lib/useKey';
+import { useKey } from 'react-use';
 
 import {
   DROPDOWN_STATE_DISABLED,

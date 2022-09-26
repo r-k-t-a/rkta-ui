@@ -1,1 +1,1 @@
-export default from './Visible';
+export { default as Visible } from './Visible';

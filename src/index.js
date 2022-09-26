@@ -3,8 +3,8 @@ export * from './atoms';
 export * from './fx';
 export * from './molecules';
 
-export media from './util/media';
-export useMedia from './util/useMedia';
-export createMediaQueries from './util/createMediaQueries';
+export { default as media } from './util/media';
+export { default as useMedia } from './util/useMedia';
+export { default as createMediaQueries } from './util/createMediaQueries';
 
-export useControlledDropdown from './atoms/Dropdown/useControlledDropdown';
+export { default as useControlledDropdown } from './atoms/Dropdown/useControlledDropdown';

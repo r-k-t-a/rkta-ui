@@ -1,6 +1,6 @@
-export Button from './Button';
-export Input from './Input';
-export LinearProgress from './LinearProgress';
+export { Button } from './Button';
+export { default as Input } from './Input';
+export { LinearProgress } from './LinearProgress';
 export * from './List';
-export Spinner from './Spinner';
-export Tabs from './Tabs';
+export { default as Spinner } from './Spinner';
+export { default as Tabs } from './Tabs';

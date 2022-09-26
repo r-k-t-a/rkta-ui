@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-import Button from '../../Button';
+import { Button } from '../../Button';
 import { ListItem } from '../Item';
 
 const ListButton = forwardRef((props, ref) => (

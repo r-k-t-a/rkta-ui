@@ -52,10 +52,13 @@
     "pretty-quick": "^1.10.0"
   },
   "dependencies": {
+    "@emotion/core": "^10.3.1",
     "@emotion/react": "^11.10.4",
     "lodash": "^4.17.11",
     "prop-types": "^15.7.2",
-    "react-use": "^9.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-use": "^17.4.0",
     "react-useinterval": "^1.0.1"
   },
   "author": "Serge Droganov <serge@droganov.ru>",
@@ -70,9 +73,5 @@
   "directories": {
     "doc": "docs",
     "lib": "lib"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
   }
 }

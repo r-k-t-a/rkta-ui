@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import PropTypes from 'prop-types';
-import useClickAway from 'react-use/lib/useClickAway';
+import { useClickAway } from 'react-use';
 import Paper from '../Paper';
 
 import getBodyNode from '../../util/getBodyNode';
