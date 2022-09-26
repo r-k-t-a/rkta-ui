@@ -50,6 +50,7 @@ const Dropdown = ({
       {...rest}
       atomRef={dropdownRef}
       css={{ ...getCss(state), ...dynamicCss }}
+      // eslint-disable-next-line react/jsx-no-bind
       onAnimationEnd={handleAnimationEnd}
     >
       {children}
@@ -71,6 +72,9 @@ Dropdown.propTypes = {
 Dropdown.defaultProps = {
   placement: DROPDOWN_PALCEMENT_BL,
   state: DROPDOWN_STATE_DISABLED,
+  onBeginExit: undefined,
+  onExit: undefined,
+  onReadyState: undefined,
 };
 
 export default Dropdown;

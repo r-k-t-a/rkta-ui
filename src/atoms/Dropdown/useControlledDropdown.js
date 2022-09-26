@@ -34,5 +34,8 @@ export default (defaultState = DROPDOWN_STATE_DISABLED) => {
 
   useKey('Escape', onBeginExit, {}, [state]);
 
-  return [{ state, onBeginExit, onExit, onReadyState }, { toggle, isActive, setIsActive }];
+  return [
+    { state, onBeginExit, onExit, onReadyState },
+    { toggle, isActive, setIsActive },
+  ];
 };

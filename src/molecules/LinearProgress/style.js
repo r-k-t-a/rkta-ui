@@ -1,4 +1,4 @@
-import { keyframes } from '@emotion/core';
+import { keyframes } from '@emotion/react';
 import css from '../../util/css';
 
 const indeterminate = keyframes`

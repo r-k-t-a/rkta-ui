@@ -1,4 +1,4 @@
-import { keyframes } from '@emotion/core';
+import { keyframes } from '@emotion/react';
 import { DROPDOWN_STATE_ENTERING, DROPDOWN_STATE_EXITING } from './constants';
 import pipe from '../../util/pipe';
 
@@ -45,7 +45,4 @@ function getStaticCss(animationCss, relative) {
   };
 }
 
-export default pipe(
-  getAnimationCss,
-  getStaticCss,
-);
+export default pipe(getAnimationCss, getStaticCss);
