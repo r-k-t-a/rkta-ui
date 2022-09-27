@@ -34,7 +34,7 @@ const Dropdown = ({
   state,
   ...rest
 }) => {
-  if (state === DROPDOWN_STATE_DISABLED) return null;
+  const disabled = state === DROPDOWN_STATE_DISABLED;
   const bodyNode = getBodyNode();
   const dropdownRef = useRef(null);
   const dynamicCss = usePositionBinding(bindTo, placement);
@@ -43,7 +43,10 @@ const Dropdown = ({
     if (state === DROPDOWN_STATE_EXITING) onExit();
     else onReadyState();
   }
-  useClickAway(dropdownRef, onBeginExit, ['click']);
+  const awayHandler = disabled ? () => {} : onBeginExit;
+  useClickAway(dropdownRef, awayHandler, ['click']);
+  if (disabled) return null;
+
   const output = (
     <Paper
       rize={1}
