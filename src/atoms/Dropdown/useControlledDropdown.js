@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import useKey from 'react-use/lib/useKey';
+import { useKey } from 'react-use';
 
 import {
   DROPDOWN_STATE_DISABLED,
@@ -34,5 +34,8 @@ export default (defaultState = DROPDOWN_STATE_DISABLED) => {
 
   useKey('Escape', onBeginExit, {}, [state]);
 
-  return [{ state, onBeginExit, onExit, onReadyState }, { toggle, isActive, setIsActive }];
+  return [
+    { state, onBeginExit, onExit, onReadyState },
+    { toggle, isActive, setIsActive },
+  ];
 };

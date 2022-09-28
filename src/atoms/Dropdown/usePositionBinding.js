@@ -28,7 +28,7 @@ export default (bindTo, placement) => {
   const [state, replaceState] = useState(defaultState);
   function observeChanges() {
     const nextState = getDropDownCss(bindTo, placement);
-    const diff = difference(values(state), values(nextState));
+    const diff = difference(values(nextState), values(state));
     if (diff.length) replaceState(nextState);
   }
   useInterval(observeChanges, 32);

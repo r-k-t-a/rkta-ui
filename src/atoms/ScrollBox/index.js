@@ -1,1 +1,1 @@
-export default from './ScrollBox';
+export { default as ScrollBox } from './ScrollBox';

@@ -1,2 +1,2 @@
-export ListItem from './Item';
-export ListItemBody from './Body';
+export { default as ListItem } from './Item';
+export { default as ListItemBody } from './Body';

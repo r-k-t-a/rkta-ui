@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import PropTypes from 'prop-types';
-import useClickAway from 'react-use/lib/useClickAway';
+import { useClickAway } from 'react-use';
 import Paper from '../Paper';
 
 import getBodyNode from '../../util/getBodyNode';
@@ -34,7 +34,6 @@ const Dropdown = ({
   state,
   ...rest
 }) => {
-  if (state === DROPDOWN_STATE_DISABLED) return null;
   const bodyNode = getBodyNode();
   const dropdownRef = useRef(null);
   const dynamicCss = usePositionBinding(bindTo, placement);
@@ -43,13 +42,17 @@ const Dropdown = ({
     if (state === DROPDOWN_STATE_EXITING) onExit();
     else onReadyState();
   }
-  useClickAway(dropdownRef, onBeginExit, ['click']);
+  const awayHandler = state === DROPDOWN_STATE_READY ? onBeginExit : () => {};
+  useClickAway(dropdownRef, awayHandler, ['click']);
+  if (state === DROPDOWN_STATE_DISABLED) return null;
+
   const output = (
     <Paper
       rize={1}
       {...rest}
       atomRef={dropdownRef}
       css={{ ...getCss(state), ...dynamicCss }}
+      // eslint-disable-next-line react/jsx-no-bind
       onAnimationEnd={handleAnimationEnd}
     >
       {children}
@@ -71,6 +74,9 @@ Dropdown.propTypes = {
 Dropdown.defaultProps = {
   placement: DROPDOWN_PALCEMENT_BL,
   state: DROPDOWN_STATE_DISABLED,
+  onBeginExit: undefined,
+  onExit: undefined,
+  onReadyState: undefined,
 };
 
 export default Dropdown;
