@@ -1,6 +1,6 @@
 {
   "name": "rkta-ui",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "A minimal material UI for React",
   "main": "lib",
   "scripts": {
