@@ -12,7 +12,6 @@
     "lint": "eslint src --ext .js,.jsx",
     "prettify": "prettier --write src/**/*.js*",
     "prepublish": "npm run lib",
-    "shrinkwrap": "npm shrinkwrap",
     "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
